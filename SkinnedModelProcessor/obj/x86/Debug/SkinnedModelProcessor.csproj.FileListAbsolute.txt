@@ -1,0 +1,14 @@
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.dll
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.pdb
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\obj\x86\Debug\SkinnedModelProcessor.csprojResolveAssemblyReference.cache
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\obj\x86\Debug\SkinnedModelProcessor.dll
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\obj\x86\Debug\SkinnedModelProcessor.pdb
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModel.dll
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModel.pdb
+D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.dll
+D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.pdb
+D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModel.dll
+D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModel.pdb
+D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModelProcessor\obj\x86\Debug\SkinnedModelProcessor.dll
+D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModelProcessor\obj\x86\Debug\SkinnedModelProcessor.pdb
+D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModelProcessor\obj\x86\Debug\SkinnedModelProcessor.csprojResolveAssemblyReference.cache

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Grass.png</Source>
+      <Name>Grass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Grass.xnb</Output>
+      <Time>2013-10-11T22:01:18+04:00</Time>
+    </Item>
+    <Item>
+      <Source>Dobrochan_TEXURE.png</Source>
+      <Name>Dobrochan_TEXURE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE.xnb</Output>
+      <Time>2013-10-11T22:01:18+04:00</Time>
+    </Item>
+    <Item>
+      <Source>MainEffects.fx</Source>
+      <Name>MainEffects</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Output>
+      <Time>2013-10-11T22:01:18+04:00</Time>
+    </Item>
+    <Item>
+      <Source>Dobrochar._Armature_begin.fbx</Source>
+      <Name>Dobrochar._Armature_begin</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedProcessor</Processor>
+      <Parameters>
+        <Data Key="InitialRotZ">180</Data>
+        <Data Key="InitialRotX">-90</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochar._Armature_begin.xnb</Output>
+      <Time>2013-10-11T22:01:18+04:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Dobrochar._Armature_begin_0.xml</Key>
+        <Value>2013-10-12T22:44:40.207368+04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Request>
+      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Request>
+    </Item>
+    <Item>
+      <Source>baseballbat.fbx</Source>
+      <Name>baseballbat</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Parameters>
+        <Data Key="Scale">2</Data>
+        <Data Key="RotationX">-90</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\baseballbat.xnb</Output>
+      <Time>2013-10-11T22:01:18+04:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\baseballbat_0.xml</Key>
+        <Value>2013-10-12T22:44:41.3184315+04:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>SpriteFont1.spritefont</Source>
+      <Name>SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2013-10-11T22:01:18+04:00</Time>
+    </Item>
+    <Item>
+      <Source>Dobrochar._Armature_begin.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Dobrochar._Armature_begin_0.xml</Output>
+      <Time>2013-10-11T22:01:18+04:00</Time>
+    </Item>
+    <Item>
+      <Source>Dobrochan_TEXURE.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Output>
+      <Time>2013-10-11T22:01:18+04:00</Time>
+    </Item>
+    <Item>
+      <Source>baseballbat.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\baseballbat_0.xml</Output>
+      <Time>2013-10-11T22:01:18+04:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.dll</Key>
+        <Value>2013-10-11T22:01:20+04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T14:41:18+05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T14:41:18+05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T14:41:18+05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T14:41:18+05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T14:41:18+05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T14:41:18+05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-03-22T00:42:44.2052594+04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

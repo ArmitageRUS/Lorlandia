@@ -1,0 +1,2 @@
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\obj\x86\Debug\LorlandiaContent.contentprojResolveAssemblyReference.cache
+D:\MUSIC\YaDisk\Projects\Lorlandia\Lorlandia\LorlandiaContent\obj\x86\Debug\LorlandiaContent.contentprojResolveAssemblyReference.cache
