@@ -83,7 +83,6 @@ namespace Lorlandia
             FontPos = new Vector2(10,10);
             effect = Content.Load<Effect>("MainEffects");
             grassTexture = Content.Load<Texture2D>("Grass");
-            //charTexture = Content.Load<Texture2D>("Dobrochan_TEXURE");
             LoadToolModel();
             LoadCharModel();
             LoadTerrain();
@@ -154,8 +153,11 @@ namespace Lorlandia
             //cameraPosition = new Vector3(0, 10, 20);
             //pitch = -(float)Math.PI / 6.0f;
             //UpdateCamera();
-            camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
-            camera.Pitch = -MathHelper.Pi / 6.0f;
+            Mouse.SetPosition(device.Viewport.Width / 2, device.Viewport.Height / 2);
+            //camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
+            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0,2,0));
+            camera.Pitch = -MathHelper.Pi / 3.0f;
+            camera.Yaw = MathHelper.Pi;
         }
 
         private void AddCameraPosition(Vector3 movement)
@@ -190,7 +192,7 @@ namespace Lorlandia
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             // TODO: Add your update logic here

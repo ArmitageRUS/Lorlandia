@@ -54,12 +54,14 @@ namespace Lorlandia.Camera
         {
             Yaw -= g_state.ThumbSticks.Left.X * elapsed_time;
             Pitch += g_state.ThumbSticks.Left.Y * elapsed_time;
-            if (g_state.DPad.Up == ButtonState.Pressed) zoom -= 0.05f * elapsed_time;
-            if (g_state.DPad.Down == ButtonState.Pressed) zoom += 0.05f * elapsed_time;
-            if (k_state.IsKeyDown(Keys.W)) Yaw -= 0.05f * elapsed_time;
-            if (k_state.IsKeyDown(Keys.S)) Yaw += 0.05f * elapsed_time;
-            if (k_state.IsKeyDown(Keys.A)) Pitch -= 0.05f * elapsed_time;
-            if (k_state.IsKeyDown(Keys.D)) Pitch += 0.05f * elapsed_time;
+            if (g_state.DPad.Up == ButtonState.Pressed) zoom -= 15f * elapsed_time;
+            if (g_state.DPad.Down == ButtonState.Pressed) zoom += 15f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.A)) Yaw -= 1.05f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.D)) Yaw += 1.05f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.W)) Pitch += 1.05f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.S)) Pitch -= 1.05f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.Subtract)) zoom += 15f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.Add)) zoom -= 15f * elapsed_time;
         }
 
         public override void Update()
