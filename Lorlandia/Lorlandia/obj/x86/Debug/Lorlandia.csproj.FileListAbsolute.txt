@@ -28,3 +28,18 @@ D:\MUSIC\YaDisk\Projects\Lorlandia\Lorlandia\Lorlandia\obj\x86\Debug\Lorlandia.p
 D:\MUSIC\YaDisk\Projects\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\baseballbat.xnb
 D:\MUSIC\YaDisk\Projects\Lorlandia\Lorlandia\Lorlandia\obj\x86\Debug\Lorlandia.csprojResolveAssemblyReference.cache
 C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\baseballbat.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Grass.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochar._Armature_begin.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\baseballbat.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Lorlandia.exe
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Lorlandia.pdb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\SkinnedModel.dll
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\SkinnedModel.pdb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\obj\x86\Debug\Lorlandia.csprojResolveAssemblyReference.cache
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\obj\x86\Debug\Lorlandia.exe
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\obj\x86\Debug\Lorlandia.pdb

@@ -12,10 +12,12 @@ namespace Lorlandia.Camera
         Vector3 forward = Vector3.Forward;
         Vector3 up = Vector3.Up;
 
+        float zoom = 15.0f;
+
         public Vector3 target;
         public Vector3 position;
 
-        public float Yaw
+        public override float Yaw
         {
             get
             {
@@ -27,7 +29,7 @@ namespace Lorlandia.Camera
             }
         }
 
-        public float Pitch
+        public override float Pitch
         {
             get
             {
@@ -48,14 +50,21 @@ namespace Lorlandia.Camera
             this.target = target;
         }
 
-        public override void HandleInput(float elapsed_time, GamePadState g_state, KeyboardState k_state)
-        { 
-            
+        public override void HandleInput(float elapsed_time, GamePadState g_state, KeyboardState k_state, MouseState m_state)
+        {
+            Yaw -= g_state.ThumbSticks.Left.X * elapsed_time;
+            Pitch += g_state.ThumbSticks.Left.Y * elapsed_time;
+            if (g_state.DPad.Up == ButtonState.Pressed) zoom -= 0.05f * elapsed_time;
+            if (g_state.DPad.Down == ButtonState.Pressed) zoom += 0.05f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.W)) Yaw -= 0.05f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.S)) Yaw += 0.05f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.A)) Pitch -= 0.05f * elapsed_time;
+            if (k_state.IsKeyDown(Keys.D)) Pitch += 0.05f * elapsed_time;
         }
 
         public override void Update()
         {
-            Vector3 cameraPosition = new Vector3(0, 15, 0);
+            Vector3 cameraPosition = new Vector3(0, zoom, 0);
 
             cameraPosition = Vector3.Transform(cameraPosition, Matrix.CreateRotationX(Pitch));
             cameraPosition = Vector3.Transform(cameraPosition, Matrix.CreateRotationY(Yaw));

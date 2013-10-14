@@ -33,7 +33,7 @@ namespace Lorlandia
         Model toolModel;
         AnimationPlayer modelPlayer;
         SpherePrimitive sphere;
-        FirstPersonCamera camera;
+        Camera.Camera camera;
         Matrix worldMatrix;
         //Matrix viewMatrix;
         //Matrix projectionMatrix;
@@ -68,7 +68,7 @@ namespace Lorlandia
             Window.Title = "Lorlandia — alpha";
             device = graphics.GraphicsDevice;
             base.Initialize();
-            sphere = new SpherePrimitive(device);
+            
         }
 
         /// <summary>
@@ -87,6 +87,7 @@ namespace Lorlandia
             LoadToolModel();
             LoadCharModel();
             LoadTerrain();
+            sphere = new SpherePrimitive(device);
             SetUpCamera();
             // TODO: use this.Content to load your game content here
         }
@@ -153,8 +154,7 @@ namespace Lorlandia
             //cameraPosition = new Vector3(0, 10, 20);
             //pitch = -(float)Math.PI / 6.0f;
             //UpdateCamera();
-
-            camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20));
+            camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
             camera.Pitch = -MathHelper.Pi / 6.0f;
         }
 
@@ -195,6 +195,7 @@ namespace Lorlandia
 
             // TODO: Add your update logic here
             ProcessInput((float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f);
+            camera.Update();
             Dictionary<int, Matrix> headTransform = new Dictionary<int, Matrix>();
             headTransform.Add(headBone, headYaw);
             modelPlayer.Update(gameTime.ElapsedGameTime, Matrix.Identity, headTransform);
@@ -203,19 +204,12 @@ namespace Lorlandia
         private void ProcessInput(float elapsedMiliseconds)
         {
             GamePadState g_state = GamePad.GetState(PlayerIndex.One);
-            Vector3 move_direction = Vector3.Zero;
-            if (g_state.Buttons.LeftStick == ButtonState.Pressed) move_direction.Y = 0.05f;
-            if (g_state.Buttons.RightStick == ButtonState.Pressed) move_direction.Y = -0.05f;
-            camera.Yaw -= g_state.ThumbSticks.Left.X * elapsedMiliseconds;
-            camera.Pitch += g_state.ThumbSticks.Left.Y * elapsedMiliseconds;
-            move_direction.X = g_state.ThumbSticks.Right.X * elapsedMiliseconds;
-            move_direction.Z -= g_state.ThumbSticks.Right.Y * elapsedMiliseconds;
-            //AddCameraPosition(move_direction*elapsedMiliseconds);
+            KeyboardState k_state = Keyboard.GetState();
+            MouseState m_state = Mouse.GetState();
+            camera.HandleInput(elapsedMiliseconds, g_state, k_state, m_state);
             float headRotate = -g_state.Triggers.Left + g_state.Triggers.Right;
             headYaw = Matrix.CreateRotationZ(MathHelper.ToRadians(45.0f*headRotate));
-            camera.movement = move_direction;
-            camera.Update();
-            output = camera.Pitch.ToString();
+            output = "Pitch"+camera.Pitch.ToString();
         }
         /// <summary>
         /// This is called when the game should draw itself.
@@ -226,7 +220,7 @@ namespace Lorlandia
             GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1.0f, 0);
             spriteBatch.Begin();
             Vector2 FontOrigin = Font1.MeasureString(output) / 2;
-            spriteBatch.DrawString(Font1, output, FontPos, Color.LightGreen, 0, Vector2.Zero, 1.0f, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(Font1, output, FontPos, Color.Black, 0, Vector2.Zero, 1.0f, SpriteEffects.None, 0f);
             spriteBatch.End();
             GraphicsDevice.BlendState = BlendState.Opaque;
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
