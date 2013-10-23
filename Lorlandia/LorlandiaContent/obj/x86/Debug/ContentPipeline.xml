@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Grass.xnb</Output>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Grass.xnb</Output>
       <Time>2013-10-14T22:27:02.7650084+04:00</Time>
     </Item>
     <Item>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE.xnb</Output>
-      <Time>2013-10-14T22:27:02.7550078+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE.xnb</Output>
+      <Time>2013-10-24T00:38:00.2852192+04:00</Time>
     </Item>
     <Item>
       <Source>MainEffects.fx</Source>
@@ -25,7 +25,7 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Output>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Output>
       <Time>2013-10-14T22:27:02.7670085+04:00</Time>
     </Item>
     <Item>
@@ -38,14 +38,14 @@
         <Data Key="InitialRotX">-90</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochar._Armature_begin.xnb</Output>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochar._Armature_begin.xnb</Output>
       <Time>2013-10-14T22:27:02.7630083+04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Dobrochar._Armature_begin_0.xml</Key>
-        <Value>2013-10-14T22:28:25.3737333+04:00</Value>
+        <Value>2013-10-24T00:44:11.6384593+04:00</Value>
       </Dependency>
-      <Request>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Request>
-      <Request>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Request>
+      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Request>
+      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Request>
     </Item>
     <Item>
       <Source>baseballbat.fbx</Source>
@@ -57,11 +57,11 @@
         <Data Key="RotationX">-90</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\baseballbat.xnb</Output>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\baseballbat.xnb</Output>
       <Time>2013-10-14T22:27:02.7730088+04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\baseballbat_0.xml</Key>
-        <Value>2013-10-14T22:28:26.521799+04:00</Value>
+        <Value>2013-10-24T00:44:12.8225271+04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
       <Time>2013-10-14T22:27:02.7680085+04:00</Time>
     </Item>
     <Item>
@@ -93,8 +93,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Output>
-      <Time>2013-10-14T22:27:02.7550078+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Output>
+      <Time>2013-10-24T00:38:00.2852192+04:00</Time>
     </Item>
     <Item>
       <Source>baseballbat.fbx</Source>
@@ -109,14 +109,14 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\</RootDirectory>
-      <LoggerRootDirectory>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.dll</Key>
+        <Key>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.dll</Key>
         <Value>2013-10-14T22:28:22.6315765+04:00</Value>
       </Assembly>
       <Assembly>

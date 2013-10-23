@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\Dobrochar._Armature_begin.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\Dobrochar._Armature_begin.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -3804,7 +3804,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material__Dobrochan_TEXURE_png</Name>
       <Identity>
-        <SourceFilename>c:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\Dobrochar._Armature_begin.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\Dobrochar._Armature_begin.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
