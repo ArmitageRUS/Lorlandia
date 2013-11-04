@@ -109,6 +109,8 @@ namespace Lorlandia
         private void LoadToolModel()
         { 
             toolModel = Content.Load<Model>("baseballbat");
+
+           
             //foreach (ModelMesh mesh in toolModel.Meshes)
             //{
             //    foreach (ModelMeshPart part in mesh.MeshParts)
