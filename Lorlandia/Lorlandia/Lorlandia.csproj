@@ -110,6 +110,7 @@
     <Compile Include="Camera\ArcBollCamera.cs" />
     <Compile Include="Camera\FirstPersonCamera.cs" />
     <Compile Include="Camera\Camera.cs" />
+    <Compile Include="Physics\Collision.cs" />
     <Compile Include="Primitives3D\GeometricPrimitive.cs" />
     <Compile Include="Primitives3D\SpherePrimitive.cs" />
     <Compile Include="Primitives3D\VertexPositionNormal.cs" />
