@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using SkinnedModel;
 using Lorlandia.Primitives3D;
 using Lorlandia.Camera;
+using Lorlandia.Physics;
 
 namespace Lorlandia
 {
@@ -33,18 +34,16 @@ namespace Lorlandia
         Model toolModel;
         AnimationPlayer modelPlayer;
         SpherePrimitive sphere;
+        Collision collision;
         Camera.Camera camera;
-        Matrix worldMatrix;
-        //Matrix viewMatrix;
-        //Matrix projectionMatrix;
         Matrix headYaw;
-        Vector3 cameraPosition;
-        float yaw = 0f; //around UP axis
-        float pitch = 0f; //arounf RIGHT axis
+        Vector3 SphereOffset = Vector3.Zero;
         //float lower_model_point = 0;
         const float constSpeed = 13.0f;
         int headBone = 0;
         int leftPlamBone = 0;
+
+        Vector3[] terrainPoligons;
         
         public Game1()
         {
@@ -88,6 +87,7 @@ namespace Lorlandia
             LoadTerrain();
             sphere = new SpherePrimitive(device);
             SetUpCamera();
+            collision = new Collision();
             // TODO: use this.Content to load your game content here
         }
 
@@ -101,6 +101,12 @@ namespace Lorlandia
             vertices[3] = new VertexPositionNormalTexture(new Vector3(10, 0, 10), Vector3.Up, new Vector2(1, 1));
             vertices[4] = new VertexPositionNormalTexture(new Vector3(-10, 0, 10), Vector3.Up, new Vector2(-1, 1));
             vertices[5] = new VertexPositionNormalTexture(new Vector3(10, 0, -10), Vector3.Up, new Vector2(1, -1));
+
+            terrainPoligons = new Vector3[4];
+            terrainPoligons[0] = new Vector3(-10, 0, -10);
+            terrainPoligons[1] = new Vector3(10, 0, -10);
+            terrainPoligons[2] = new Vector3(10, 0, 10);
+            terrainPoligons[3] = new Vector3(-10, 0, 10);
 
             vertexBuffer = new VertexBuffer(device, VertexPositionNormalTexture.VertexDeclaration, 6, BufferUsage.WriteOnly);
             vertexBuffer.SetData<VertexPositionNormalTexture>(vertices);
@@ -151,10 +157,6 @@ namespace Lorlandia
         
         private void SetUpCamera()
         {
-            //projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, device.Viewport.AspectRatio, 1.0f, 500.0f);
-            //cameraPosition = new Vector3(0, 10, 20);
-            //pitch = -(float)Math.PI / 6.0f;
-            //UpdateCamera();
             Mouse.SetPosition(device.Viewport.Width / 2, device.Viewport.Height / 2);
             //camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
             camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0,2,0));
@@ -162,21 +164,6 @@ namespace Lorlandia
             camera.Yaw = MathHelper.Pi;
         }
 
-        private void AddCameraPosition(Vector3 movement)
-        {
-            Matrix rotation = Matrix.CreateFromYawPitchRoll(yaw, pitch, 0);
-            Vector3 rotatedVector = Vector3.Transform(movement,rotation);
-            cameraPosition += rotatedVector*constSpeed;
-            UpdateCamera();
-        }
-
-        private void UpdateCamera()
-        {
-            Matrix rotation = Matrix.CreateFromYawPitchRoll(yaw, pitch, 0);
-            Vector3 cameraForward = Vector3.Transform(Vector3.Forward, rotation);
-            Vector3 cameraUp = Vector3.Transform(Vector3.Up, rotation);
-            //viewMatrix = Matrix.CreateLookAt(cameraPosition, cameraPosition+cameraForward, cameraUp);
-        }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
@@ -214,7 +201,27 @@ namespace Lorlandia
             float headRotate = -g_state.Triggers.Left + g_state.Triggers.Right;
             headYaw = Matrix.CreateRotationZ(MathHelper.ToRadians(45.0f*headRotate));
             output = "Pitch"+camera.Pitch.ToString();
+
+            /*sphere move*/
+            if (k_state.IsKeyDown(Keys.NumPad8)) SphereOffset += Vector3.Up * elapsedMiliseconds;
+            if (k_state.IsKeyDown(Keys.NumPad2)) SphereOffset -= Vector3.Up * elapsedMiliseconds;
+            Collision.Intersection intersect = collision.ClassifySphere(terrainPoligons, sphere.Centre, 5);
+            switch (intersect)
+            { 
+                case Collision.Intersection.Front:
+                    sphere.color = Color.Blue;
+                    break;
+                case Collision.Intersection.Inside:
+                    sphere.color = Color.Red;
+                    break;
+                case Collision.Intersection.Behind:
+                    sphere.color = Color.Black;
+                    break;
+                default:
+                    break;
+            }
         }
+        
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -231,7 +238,7 @@ namespace Lorlandia
             DrawTerrain();
             DrawCharacter();
             DrawTool();
-            sphere.Draw(Matrix.Identity, camera.View, camera.Projection, Color.White);
+            sphere.Draw(Matrix.CreateTranslation(SphereOffset), camera.View, camera.Projection);
             // TODO: Add your drawing code here
             base.Draw(gameTime);
         }

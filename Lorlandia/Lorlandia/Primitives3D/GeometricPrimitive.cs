@@ -15,8 +15,12 @@ namespace Lorlandia.Primitives3D
         IndexBuffer indexBuffer;
         BasicEffect effect;
 
+        public Color color = Color.White; 
+
         List<VertexPositionNormal> vertices = new List<VertexPositionNormal>();
         List<ushort> indices = new List<ushort>();
+
+        protected Matrix world;
 
         protected Int32 LastVertex
         {
@@ -46,8 +50,9 @@ namespace Lorlandia.Primitives3D
             indices.Add((ushort)index);
         }
 
-        public void Draw(Matrix world, Matrix view, Matrix projection, Color color)
+        public void Draw(Matrix world, Matrix view, Matrix projection)
         {
+            this.world = world;
             effect.World = world;
             effect.View = view;
             effect.Projection = projection;

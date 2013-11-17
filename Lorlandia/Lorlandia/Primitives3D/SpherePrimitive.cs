@@ -13,9 +13,25 @@ namespace Lorlandia.Primitives3D
             : this(device, 5, 8)
         { }
 
+        Vector3 _centre;
+
+        public Vector3 Centre
+        {
+            get 
+            {
+                return Vector3.Transform(_centre, base.world);  
+            }
+            private set
+            {
+                _centre = value;
+            }
+        }
+
         public SpherePrimitive(GraphicsDevice device, float radius, int tessellation)
         {
             base.device = device;
+
+            Centre = Vector3.Zero;
 
             if (tessellation < 4) tessellation = 4;
             int verticalSegments = tessellation;
