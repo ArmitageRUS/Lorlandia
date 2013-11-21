@@ -28,6 +28,14 @@ namespace Lorlandia.Physics
             return intersectResult;
         }
 
+        private bool InsidePoligon(Vector3 auditeePoint, Vector3[] poligon)
+        {
+            for (int i = 0; i < poligon.Length; i++)
+            { 
+                    
+            }
+            return false;
+        }
         
     }
 }
