@@ -205,6 +205,8 @@ namespace Lorlandia
             /*sphere move*/
             if (k_state.IsKeyDown(Keys.NumPad8)) SphereOffset += Vector3.Up * elapsedMiliseconds;
             if (k_state.IsKeyDown(Keys.NumPad2)) SphereOffset -= Vector3.Up * elapsedMiliseconds;
+            if (k_state.IsKeyDown(Keys.NumPad4)) SphereOffset += Vector3.Left * elapsedMiliseconds;
+            if (k_state.IsKeyDown(Keys.NumPad6)) SphereOffset -= Vector3.Left * elapsedMiliseconds;
             Collision.Intersection intersect = collision.ClassifySphere(terrainPoligons, sphere.Centre, 5);
             switch (intersect)
             { 
@@ -218,6 +220,7 @@ namespace Lorlandia
                     sphere.color = Color.Black;
                     break;
                 default:
+                    sphere.color = Color.White;
                     break;
             }
         }
