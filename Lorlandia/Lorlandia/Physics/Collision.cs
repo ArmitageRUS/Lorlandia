@@ -28,6 +28,7 @@ namespace Lorlandia.Physics
                     intersectResult = Intersection.Inside;
                     Vector3 inspectedPoint = sphere_centre - poligon_normal * sphere_offset;
                     intersectResult = InsidePoligon(inspectedPoint, poligon) ? Intersection.Inside : Intersection.None;
+                    if (intersectResult == Intersection.None) intersectResult = EdgePoligonCollision(sphere_centre, poligon, radius) ? Intersection.Inside : Intersection.None;
                 }
                 else if (sphere_offset >= radius) intersectResult = Intersection.Front;
                 else if (sphere_offset < radius) intersectResult = Intersection.Behind;
@@ -53,14 +54,36 @@ namespace Lorlandia.Physics
             return false;
         }
 
-        private bool EdgePoligonCollision(Vector3 center, Vector3[] poligon)
+        private bool EdgePoligonCollision(Vector3 center, Vector3[] poligon, float radius)
         {
+            bool return_value = false;
             int vertex_count = poligon.Length;
             for (int i = 0; i < vertex_count; i++)
-            { 
-                
+            {
+                Vector3 vPoint = ClosestPointOnEdge(poligon[i], poligon[(i + 1) % vertex_count], center);
+                if ((center - vPoint).Length() < radius)
+                {
+                    return_value = true;
+                    break;
+                }
             }
-            return false;
+            return return_value;
+        }
+
+        private Vector3 ClosestPointOnEdge(Vector3 vA, Vector3 vB, Vector3 center)
+        {
+            Vector3 vAB = vB - vA;
+            float edge_length =vAB.Length();
+            vAB.Normalize();
+            Vector3 vAC = center - vA;
+            float projection_length = Vector3.Dot(vAB, vAC);
+            if (projection_length < 0) return vA;
+            else if (projection_length > edge_length) return vB;
+            else
+            {
+                vAB *= projection_length;
+                return vA + vAB;
+            }
         }
     }
 }
