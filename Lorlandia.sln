@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lorlandia", "Lorlandia\Lorlandia\Lorlandia.csproj", "{1EE387C1-DF65-4DE4-9339-D60989A8DE82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LorlandiaContent", "Lorlandia\LorlandiaContent\LorlandiaContent.contentproj", "{AC7C1208-D326-471E-84A5-232C435E6A06}"
@@ -8,6 +8,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkinnedModelProcessor", "SkinnedModelProcessor\SkinnedModelProcessor.csproj", "{BCB06286-AD5F-4BC4-8C3D-8EEBB5AC14A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkinnedModel", "SkinnedModel\SkinnedModel.csproj", "{E19C3603-3203-4CDD-9AE1-4E53F1DA375B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGame", "TestGame\TestGame\TestGame.csproj", "{23E39BCE-8277-45F6-BE89-6A5B0BA6DE9F}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TestGameContent", "TestGame\TestGameContent\TestGameContent.contentproj", "{C801E610-0C4B-40F6-9EC1-256E4FE8F8A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,12 @@ Global
 		{E19C3603-3203-4CDD-9AE1-4E53F1DA375B}.Debug|x86.Build.0 = Debug|x86
 		{E19C3603-3203-4CDD-9AE1-4E53F1DA375B}.Release|x86.ActiveCfg = Release|x86
 		{E19C3603-3203-4CDD-9AE1-4E53F1DA375B}.Release|x86.Build.0 = Release|x86
+		{23E39BCE-8277-45F6-BE89-6A5B0BA6DE9F}.Debug|x86.ActiveCfg = Debug|x86
+		{23E39BCE-8277-45F6-BE89-6A5B0BA6DE9F}.Debug|x86.Build.0 = Debug|x86
+		{23E39BCE-8277-45F6-BE89-6A5B0BA6DE9F}.Release|x86.ActiveCfg = Release|x86
+		{23E39BCE-8277-45F6-BE89-6A5B0BA6DE9F}.Release|x86.Build.0 = Release|x86
+		{C801E610-0C4B-40F6-9EC1-256E4FE8F8A3}.Debug|x86.ActiveCfg = Debug|x86
+		{C801E610-0C4B-40F6-9EC1-256E4FE8F8A3}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

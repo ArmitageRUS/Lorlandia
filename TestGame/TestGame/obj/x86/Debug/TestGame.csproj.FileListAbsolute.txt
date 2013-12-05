@@ -1,0 +1,5 @@
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\TestGame.exe
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\TestGame.pdb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\obj\x86\Debug\TestGame.exe
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\obj\x86\Debug\TestGame.pdb

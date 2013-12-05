@@ -5,9 +5,10 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+
 namespace Lorlandia.Primitives3D
 {
-    struct VertexPositionNormal:IVertexType
+    public struct VertexPositionNormal:IVertexType
     {
         public Vector3 position;
         public Vector3 normal;
