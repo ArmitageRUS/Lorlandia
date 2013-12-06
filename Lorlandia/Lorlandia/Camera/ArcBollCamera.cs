@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Lorlandia.Camera
 {
-    class ArcBallCamera:Camera
+    public class ArcBallCamera:Camera
     {
         Vector3 forward = Vector3.Forward;
         Vector3 up = Vector3.Up;

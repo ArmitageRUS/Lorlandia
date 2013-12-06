@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Lorlandia.Primitives3D;
+using Lorlandia.Camera;
 
 namespace TestGame
 {
@@ -20,8 +21,13 @@ namespace TestGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         VertexBuffer vertexBuffer;
+        VertexBuffer triangleBuffer;
         IndexBuffer indexBuffer;
         GraphicsDevice device;
+        Color color = Color.Black;
+        Camera camera;
+
+        static RasterizerState Wire = new RasterizerState { FillMode = FillMode.WireFrame, CullMode = CullMode.None };
 
         public Game1()
         {
@@ -53,22 +59,30 @@ namespace TestGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            VertexPositionNormal[] vertices = new VertexPositionNormal[6];
+            LoadBox();
+            Loadtriangle();
+            SetUpCamera();
+            // TODO: use this.Content to load your game content here
 
+        }
+
+        private void LoadBox()
+        { 
+            VertexPositionNormal[] vertices = new VertexPositionNormal[8];
             //top
-            vertices[0] = new VertexPositionNormal(new Vector3(-5, 5, 7), Vector3.Up); //top_right_front
-            vertices[1] = new VertexPositionNormal(new Vector3(-5, 5, -7), Vector3.Up); //top_rigth_back
-            vertices[2] = new VertexPositionNormal(new Vector3(5, 5, -7), Vector3.Up); //top_left_back
-            vertices[3] = new VertexPositionNormal(new Vector3(5, 5, 7), Vector3.Up); //top_left_front
+            vertices[0] = new VertexPositionNormal(new Vector3(-5, 5, 7), Vector3.Up); //top_left_front
+            vertices[1] = new VertexPositionNormal(new Vector3(-5, 5, -7), Vector3.Up); //top_left_back
+            vertices[2] = new VertexPositionNormal(new Vector3(5, 5, -7), Vector3.Up); //top_right_back
+            vertices[3] = new VertexPositionNormal(new Vector3(5, 5, 7), Vector3.Up); //top_right_front
             //down
             vertices[4] = new VertexPositionNormal(new Vector3(-5, -5, 7), Vector3.Up); //dawn_left_front
             vertices[5] = new VertexPositionNormal(new Vector3(-5, -5, -7), Vector3.Up); //dawn_left_back
             vertices[6] = new VertexPositionNormal(new Vector3(5, -5, -7), Vector3.Up); //dawn_right_back
             vertices[7] = new VertexPositionNormal(new Vector3(5, -5, 7), Vector3.Up); //dawn_right_front
 
-            vertexBuffer = new VertexBuffer(device, VertexPositionNormal.VertexDeclaration, 6, BufferUsage.WriteOnly);
+            vertexBuffer = new VertexBuffer(device, VertexPositionNormal.VertexDeclaration, 8, BufferUsage.WriteOnly);
             vertexBuffer.SetData<VertexPositionNormal>(vertices);
-            ushort[] indices = new ushort[12];
+            ushort[] indices = new ushort[36];
             //top
             indices[0] = 0;
             indices[1] = 2;
@@ -99,24 +113,47 @@ namespace TestGame
             indices[23] = 1;
             //left
             indices[24] = 5;
-            indices[25] = 2;
+            indices[25] = 1;
             indices[26] = 4;
-            indices[27] = 3;
+            indices[27] = 0;
             indices[28] = 4;
-            indices[29] = 2;
+            indices[29] = 1;
             //right
-            indices[30] = 0;
-            indices[31] = 1;
-            indices[32] = 7;
-            indices[33] = 6;
-            indices[34] = 7;
-            indices[35] = 1;
+            indices[30] = 6;
+            indices[31] = 7;
+            indices[32] = 2;
+            
+            indices[33] = 3;
+            indices[34] = 2;
+            indices[35] = 7;
             indexBuffer = new IndexBuffer(device, typeof(ushort), indices.Length, BufferUsage.WriteOnly);
             indexBuffer.SetData<ushort>(indices);
-            // TODO: use this.Content to load your game content here
-            
         }
+        private void Loadtriangle()
+        {
+            VertexPositionColor[] vertices = new VertexPositionColor[3];
+            //top
+            vertices[0] = new VertexPositionColor(new Vector3(3, 6, 9), Color.Red);
+            vertices[1] = new VertexPositionColor(new Vector3(6, 7.5f, 8), Color.Red);
+            vertices[2] = new VertexPositionColor(new Vector3(5, 8, 7.5f), Color.Red);
 
+            triangleBuffer = new VertexBuffer(device, VertexPositionColor.VertexDeclaration, 3, BufferUsage.WriteOnly);
+            triangleBuffer.SetData<VertexPositionColor>(vertices);
+
+            Vector3 E2 = new Vector3(5, 8, 7.5f) - new Vector3(3, 6, 9);
+            Vector3 E1 = new Vector3(6, 7.5f, 8) - new Vector3(3, 6, 9);
+            Vector3 normal_v = Vector3.Cross(E2, E1);
+            float L = Vector3.Dot(normal_v, new Vector3(3, 6, 9));
+            //float R = 5* + 7 + 5;
+        }
+        private void SetUpCamera()
+        {
+            Mouse.SetPosition(device.Viewport.Width / 2, device.Viewport.Height / 2);
+            //camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
+            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 2, 0));
+            camera.Pitch = -MathHelper.Pi / 3.0f;
+            camera.Yaw = MathHelper.Pi;
+        }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
@@ -136,9 +173,13 @@ namespace TestGame
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            float elapsedMiliseconds = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             // TODO: Add your update logic here
-
+            GamePadState g_state = GamePad.GetState(PlayerIndex.One);
+            KeyboardState k_state = Keyboard.GetState();
+            MouseState m_state = Mouse.GetState();
+            camera.HandleInput(elapsedMiliseconds, g_state, k_state, m_state);
+            camera.Update();
             base.Update(gameTime);
         }
 
@@ -148,8 +189,33 @@ namespace TestGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            BasicEffect effect = new BasicEffect(device);
+            //effect.EnableDefaultLighting();
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            effect.World = Matrix.Identity;
+            effect.View = camera.View;
+            effect.Projection = camera.Projection;
+            effect.DiffuseColor = color.ToVector3();
+            effect.Alpha = color.A / 255.0f;
+            device.DepthStencilState = DepthStencilState.Default;
+            device.BlendState = BlendState.AlphaBlend;
+            device.RasterizerState = Wire;
+            device.SetVertexBuffer(vertexBuffer);
+            device.Indices = indexBuffer;
+            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            {
+                pass.Apply();
+                device.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, 8, 0, 12);
+            }
+            device.SetVertexBuffer(triangleBuffer);
+            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            {
+                pass.Apply();
+                device.DrawPrimitives(PrimitiveType.TriangleList, 0, 1);
+            }
 
+            device.RasterizerState = RasterizerState.CullCounterClockwise;
+            device.BlendState = BlendState.Opaque;
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

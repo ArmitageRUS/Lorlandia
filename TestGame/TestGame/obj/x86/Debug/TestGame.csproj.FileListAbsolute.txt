@@ -3,3 +3,15 @@ C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Tes
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\obj\x86\Debug\TestGame.exe
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\obj\x86\Debug\TestGame.pdb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\obj\x86\Debug\TestGame.csprojResolveAssemblyReference.cache
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\Grass.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\Dobrochan_TEXURE.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\MainEffects.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\Dobrochar._Armature_begin.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\baseballbat.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Lorlandia.exe
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\SkinnedModel.dll
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Lorlandia.pdb
+C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\SkinnedModel.pdb
