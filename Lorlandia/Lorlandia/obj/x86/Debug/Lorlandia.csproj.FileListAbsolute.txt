@@ -43,3 +43,4 @@ C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lor
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\obj\x86\Debug\Lorlandia.exe
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\obj\x86\Debug\Lorlandia.pdb
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\heightmap.xnb

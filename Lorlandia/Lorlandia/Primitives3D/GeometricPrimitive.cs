@@ -19,7 +19,7 @@ namespace Lorlandia.Primitives3D
 
         List<VertexPositionNormal> vertices = new List<VertexPositionNormal>();
         List<ushort> indices = new List<ushort>();
-
+        List<ushort[]> index_list = new List<ushort[]>();
         protected Matrix world;
 
         protected Int32 LastVertex
@@ -50,7 +50,12 @@ namespace Lorlandia.Primitives3D
             indices.Add((ushort)index);
         }
 
-        public void Draw(Matrix world, Matrix view, Matrix projection)
+        protected void AddIndexList(ushort[] line_strip)
+        {
+            index_list.Add(line_strip);
+        }
+
+        public virtual void Draw(Matrix world, Matrix view, Matrix projection)
         {
             this.world = world;
             effect.World = world;
@@ -68,7 +73,7 @@ namespace Lorlandia.Primitives3D
             {
                 pass.Apply();
                 device.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, vertices.Count, 0, indices.Count / 3);
-            }
+          }
             device.RasterizerState = RasterizerState.CullCounterClockwise;
             device.BlendState = BlendState.Opaque;            
         }
