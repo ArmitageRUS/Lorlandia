@@ -10,7 +10,7 @@ namespace Lorlandia.Primitives3D
     class SpherePrimitive:GeometricPrimitive
     {
         public SpherePrimitive(GraphicsDevice device)
-            : this(device, 5, 8)
+            : this(device, 5, 8, true)
         { }
 
         Vector3 _centre;
@@ -27,16 +27,15 @@ namespace Lorlandia.Primitives3D
             }
         }
 
-        public SpherePrimitive(GraphicsDevice device, float radius, int tessellation)
+        public SpherePrimitive(GraphicsDevice device, float radius, int tessellation, bool quadrangle)
         {
             base.device = device;
-
             Centre = Vector3.Zero;
-
+            base.quadrangle = quadrangle;
             if (tessellation < 4) tessellation = 4;
             int verticalSegments = tessellation;
             int horizontalSegments = tessellation * 2;
-
+            
             AddVertex(Vector3.Down * radius, Vector3.Down);
             for (int v = 1; v < verticalSegments; v++)
             {
@@ -51,8 +50,10 @@ namespace Lorlandia.Primitives3D
                 }
             }
             AddVertex(Vector3.Up * radius, Vector3.Up);
-            
-            for(int ibottom = 0;ibottom<horizontalSegments;ibottom++)
+
+            #region TRIANGLE_LIST
+            /* FOR TRIANGLE LIST
+            for (int ibottom = 0; ibottom < horizontalSegments; ibottom++)
             {
                 AddIndex(0);
                 AddIndex((ibottom + 2) % horizontalSegments);
@@ -73,13 +74,22 @@ namespace Lorlandia.Primitives3D
                 }
             }
 
-                for (int itop = 0; itop < horizontalSegments; itop++)
-                {
-                    AddIndex(LastVertex);
-                    AddIndex(LastVertex - (1 + itop));
-                    AddIndex(LastVertex - (2 + itop) % horizontalSegments);
-                }
-            InitializePrimitive();
+            for (int itop = 0; itop < horizontalSegments; itop++)
+            {
+                AddIndex(LastVertex);
+                AddIndex(LastVertex - (1 + itop));
+                AddIndex(LastVertex - (2 + itop) % horizontalSegments);
+            }
+            */
+            
+            #endregion
+            
+            //for quadrangle
+            for (int i = 0; i < vertices.Count; i++)
+            {
+                AddIndex(i);
+            }
+                InitializePrimitive();
         }
     }
 }

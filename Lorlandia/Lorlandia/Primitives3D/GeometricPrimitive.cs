@@ -14,12 +14,12 @@ namespace Lorlandia.Primitives3D
         VertexBuffer vertexBuffer;
         IndexBuffer indexBuffer;
         BasicEffect effect;
+        protected Boolean quadrangle;
 
-        public Color color = Color.White; 
+        public Color color = Color.White;
 
-        List<VertexPositionNormal> vertices = new List<VertexPositionNormal>();
+        protected List<VertexPositionNormal> vertices = new List<VertexPositionNormal>();
         List<ushort> indices = new List<ushort>();
-        List<ushort[]> index_list = new List<ushort[]>();
         protected Matrix world;
 
         protected Int32 LastVertex
@@ -50,11 +50,6 @@ namespace Lorlandia.Primitives3D
             indices.Add((ushort)index);
         }
 
-        protected void AddIndexList(ushort[] line_strip)
-        {
-            index_list.Add(line_strip);
-        }
-
         public virtual void Draw(Matrix world, Matrix view, Matrix projection)
         {
             this.world = world;
@@ -72,8 +67,13 @@ namespace Lorlandia.Primitives3D
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                device.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, vertices.Count, 0, indices.Count / 3);
-          }
+                if (!quadrangle) device.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, vertices.Count, 0, indices.Count / 3);
+                else
+                {
+                    device.DrawIndexedPrimitives(PrimitiveType.LineStrip, 0, 0, vertices.Count, 0, indices.Count - 1);
+                }
+
+            }
             device.RasterizerState = RasterizerState.CullCounterClockwise;
             device.BlendState = BlendState.Opaque;            
         }

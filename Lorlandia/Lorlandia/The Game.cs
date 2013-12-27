@@ -238,9 +238,9 @@ namespace Lorlandia
             spriteBatch.End();
             GraphicsDevice.BlendState = BlendState.Opaque;
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-            DrawTerrain();
-            DrawCharacter();
-            DrawTool();
+            //DrawTerrain();
+            //DrawCharacter();
+            //DrawTool();
             sphere.Draw(Matrix.CreateTranslation(SphereOffset), camera.View, camera.Projection);
             // TODO: Add your drawing code here
             base.Draw(gameTime);

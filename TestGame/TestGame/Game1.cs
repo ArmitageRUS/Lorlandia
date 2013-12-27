@@ -205,7 +205,8 @@ namespace TestGame
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                device.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, 8, 0, 12);
+                //device.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, 8, 0, 12);
+                device.DrawIndexedPrimitives(PrimitiveType.LineStrip, 0, 0, 8, 0, 7);
             }
             device.SetVertexBuffer(triangleBuffer);
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
