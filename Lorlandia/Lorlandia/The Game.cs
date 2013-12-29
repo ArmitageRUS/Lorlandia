@@ -34,6 +34,7 @@ namespace Lorlandia
         Model toolModel;
         AnimationPlayer modelPlayer;
         SpherePrimitive sphere;
+        BoxPrimitive box;
         Collision collision;
         Camera.Camera camera;
         Matrix headYaw;
@@ -86,6 +87,7 @@ namespace Lorlandia
             LoadCharModel();
             LoadTerrain();
             sphere = new SpherePrimitive(device);
+            box = new BoxPrimitive(device);
             SetUpCamera();
             collision = new Collision();
             // TODO: use this.Content to load your game content here
@@ -115,8 +117,6 @@ namespace Lorlandia
         private void LoadToolModel()
         { 
             toolModel = Content.Load<Model>("baseballbat");
-
-           
             //foreach (ModelMesh mesh in toolModel.Meshes)
             //{
             //    foreach (ModelMeshPart part in mesh.MeshParts)
@@ -187,6 +187,8 @@ namespace Lorlandia
             // TODO: Add your update logic here
             ProcessInput((float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f);
             camera.Update();
+            sphere.Update(Matrix.CreateTranslation(SphereOffset));
+            box.Update(Matrix.CreateTranslation(SphereOffset));
             Dictionary<int, Matrix> headTransform = new Dictionary<int, Matrix>();
             headTransform.Add(headBone, headYaw);
             modelPlayer.Update(gameTime.ElapsedGameTime, Matrix.Identity, headTransform);
@@ -238,10 +240,11 @@ namespace Lorlandia
             spriteBatch.End();
             GraphicsDevice.BlendState = BlendState.Opaque;
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-            //DrawTerrain();
+            DrawTerrain();
             //DrawCharacter();
             //DrawTool();
-            sphere.Draw(Matrix.CreateTranslation(SphereOffset), camera.View, camera.Projection);
+            sphere.Draw(camera.View, camera.Projection);
+            box.Draw(camera.View, camera.Projection);
             // TODO: Add your drawing code here
             base.Draw(gameTime);
         }

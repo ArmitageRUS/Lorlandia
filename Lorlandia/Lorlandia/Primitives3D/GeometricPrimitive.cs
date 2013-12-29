@@ -21,7 +21,20 @@ namespace Lorlandia.Primitives3D
         protected List<VertexPositionNormal> vertices = new List<VertexPositionNormal>();
         List<ushort> indices = new List<ushort>();
         protected Matrix world;
+        
+        Vector3 _centre;
 
+        public Vector3 Centre
+        {
+            get
+            {
+                return Vector3.Transform(_centre, world);
+            }
+            protected set
+            {
+                _centre = value;
+            }
+        }
         protected Int32 LastVertex
         {
             get { return vertices.Count-1; }
@@ -50,7 +63,12 @@ namespace Lorlandia.Primitives3D
             indices.Add((ushort)index);
         }
 
-        public virtual void Draw(Matrix world, Matrix view, Matrix projection)
+        public virtual void Update(Matrix world)
+        {
+            this.world = world;
+        }
+
+        public virtual void Draw(Matrix view, Matrix projection)
         {
             this.world = world;
             effect.World = world;

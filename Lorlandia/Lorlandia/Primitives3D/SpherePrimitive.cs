@@ -13,19 +13,19 @@ namespace Lorlandia.Primitives3D
             : this(device, 5, 8, true)
         { }
 
-        Vector3 _centre;
+        //Vector3 _centre;
 
-        public Vector3 Centre
-        {
-            get 
-            {
-                return Vector3.Transform(_centre, base.world);  
-            }
-            private set
-            {
-                _centre = value;
-            }
-        }
+        //public Vector3 Centre
+        //{
+        //    get 
+        //    {
+        //        return Vector3.Transform(_centre, base.world);  
+        //    }
+        //    private set
+        //    {
+        //        _centre = value;
+        //    }
+        //}
 
         public SpherePrimitive(GraphicsDevice device, float radius, int tessellation, bool quadrangle)
         {
@@ -85,11 +85,33 @@ namespace Lorlandia.Primitives3D
             #endregion
             
             //for quadrangle
-            for (int i = 0; i < vertices.Count; i++)
+            AddIndex(0);
+            for (int i = 0; i < verticalSegments-1; i++)
             {
-                AddIndex(i);
+                for (int j = 0; j <= horizontalSegments; j++)
+                {
+                    AddIndex(i *horizontalSegments+ (j % (horizontalSegments))+1);
+                }
             }
-                InitializePrimitive();
+            AddIndex(vertices.Count-1);
+            //another ark
+            bool up = true;
+            for (int i = 0; i < horizontalSegments; i++)
+            {
+                if (up)
+                {
+                    for (int j = verticalSegments-1; j > 0; j--)AddIndex(j * horizontalSegments - i);
+                    AddIndex(0);
+                }
+                else
+                {
+                    for (int j = 1; j < verticalSegments; j++)AddIndex(j * horizontalSegments - i);
+                    AddIndex(vertices.Count - 1);
+                }
+                up = !up;
+            }
+            
+            InitializePrimitive();
         }
     }
 }
