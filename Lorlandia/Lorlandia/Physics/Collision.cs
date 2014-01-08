@@ -15,7 +15,7 @@ namespace Lorlandia.Physics
         public Intersection ClassifySphere(Vector3[] poligon, Vector3 sphere_centre, float radius)
         {
             Intersection intersectResult = Intersection.None;
-            if(poligon.Length>2)
+            if (poligon!=null && poligon.Length > 2)
             {
                 Vector3 vA = poligon[2] - poligon[0];
                 Vector3 vB = poligon[1] - poligon[0];

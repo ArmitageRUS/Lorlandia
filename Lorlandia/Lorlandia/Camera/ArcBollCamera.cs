@@ -52,8 +52,8 @@ namespace Lorlandia.Camera
 
         public override void HandleInput(float elapsed_time, GamePadState g_state, KeyboardState k_state, MouseState m_state)
         {
-            Yaw -= g_state.ThumbSticks.Left.X * elapsed_time;
-            Pitch += g_state.ThumbSticks.Left.Y * elapsed_time;
+            Yaw -= g_state.ThumbSticks.Right.X * elapsed_time;
+            Pitch += g_state.ThumbSticks.Right.Y * elapsed_time;
             if (g_state.DPad.Up == ButtonState.Pressed) zoom -= 15f * elapsed_time;
             if (g_state.DPad.Down == ButtonState.Pressed) zoom += 15f * elapsed_time;
             if (k_state.IsKeyDown(Keys.A)) Yaw -= 1.05f * elapsed_time;

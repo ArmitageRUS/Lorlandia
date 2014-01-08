@@ -12,6 +12,8 @@ using SkinnedModel;
 using Lorlandia.Primitives3D;
 using Lorlandia.Camera;
 using Lorlandia.Physics;
+using Lorlandia.Terrain;
+using Lorlandia.Objects;
 
 namespace Lorlandia
 {
@@ -28,21 +30,22 @@ namespace Lorlandia
         VertexBuffer vertexBuffer;
         GraphicsDevice device;
         Effect effect;
-        Texture2D grassTexture;
+        //Texture2D grassTexture;
         //Texture2D charTexture;
         Model characterModel;
         Model toolModel;
-        AnimationPlayer modelPlayer;
+        //AnimationPlayer modelPlayer;
         SpherePrimitive sphere;
         BoxPrimitive box;
         Collision collision;
         Camera.Camera camera;
         Matrix headYaw;
+        HightMapTerrain terrain;
         Vector3 SphereOffset = Vector3.Zero;
+        MovableCharacter protagonist;
         //float lower_model_point = 0;
         const float constSpeed = 13.0f;
-        int headBone = 0;
-        int leftPlamBone = 0;
+        
 
         Vector3[] terrainPoligons;
         
@@ -82,7 +85,7 @@ namespace Lorlandia
             Font1 = Content.Load<SpriteFont>("SpriteFont1");
             FontPos = new Vector2(10,10);
             effect = Content.Load<Effect>("MainEffects");
-            grassTexture = Content.Load<Texture2D>("Grass");
+            
             LoadToolModel();
             LoadCharModel();
             LoadTerrain();
@@ -95,23 +98,27 @@ namespace Lorlandia
 
         private void LoadTerrain()
         {
-            VertexPositionNormalTexture[] vertices = new VertexPositionNormalTexture[6];
+            //VertexPositionNormalTexture[] vertices = new VertexPositionNormalTexture[6];
 
-            vertices[0] = new VertexPositionNormalTexture(new Vector3(-10, 0, -10), Vector3.Up, new Vector2(-1, -1));
-            vertices[1] = new VertexPositionNormalTexture(new Vector3(10, 0, -10), Vector3.Up, new Vector2(1, -1));
-            vertices[2] = new VertexPositionNormalTexture(new Vector3(-10, 0, 10), Vector3.Up, new Vector2(-1, 1));
-            vertices[3] = new VertexPositionNormalTexture(new Vector3(10, 0, 10), Vector3.Up, new Vector2(1, 1));
-            vertices[4] = new VertexPositionNormalTexture(new Vector3(-10, 0, 10), Vector3.Up, new Vector2(-1, 1));
-            vertices[5] = new VertexPositionNormalTexture(new Vector3(10, 0, -10), Vector3.Up, new Vector2(1, -1));
+            //vertices[0] = new VertexPositionNormalTexture(new Vector3(-10, 0, -10), Vector3.Up, new Vector2(-1, -1));
+            //vertices[1] = new VertexPositionNormalTexture(new Vector3(10, 0, -10), Vector3.Up, new Vector2(1, -1));
+            //vertices[2] = new VertexPositionNormalTexture(new Vector3(-10, 0, 10), Vector3.Up, new Vector2(-1, 1));
+            //vertices[3] = new VertexPositionNormalTexture(new Vector3(10, 0, 10), Vector3.Up, new Vector2(1, 1));
+            //vertices[4] = new VertexPositionNormalTexture(new Vector3(-10, 0, 10), Vector3.Up, new Vector2(-1, 1));
+            //vertices[5] = new VertexPositionNormalTexture(new Vector3(10, 0, -10), Vector3.Up, new Vector2(1, -1));
 
-            terrainPoligons = new Vector3[4];
-            terrainPoligons[0] = new Vector3(-10, 0, -10);
-            terrainPoligons[1] = new Vector3(10, 0, -10);
-            terrainPoligons[2] = new Vector3(10, 0, 10);
-            terrainPoligons[3] = new Vector3(-10, 0, 10);
+            //terrainPoligons = new Vector3[4];
+            //terrainPoligons[0] = new Vector3(-10, 0, -10);
+            //terrainPoligons[1] = new Vector3(10, 0, -10);
+            //terrainPoligons[2] = new Vector3(10, 0, 10);
+            //terrainPoligons[3] = new Vector3(-10, 0, 10);
 
-            vertexBuffer = new VertexBuffer(device, VertexPositionNormalTexture.VertexDeclaration, 6, BufferUsage.WriteOnly);
-            vertexBuffer.SetData<VertexPositionNormalTexture>(vertices);
+            //vertexBuffer = new VertexBuffer(device, VertexPositionNormalTexture.VertexDeclaration, 6, BufferUsage.WriteOnly);
+            //vertexBuffer.SetData<VertexPositionNormalTexture>(vertices);
+            Texture2D grassTexture = Content.Load<Texture2D>("Grass");
+            Texture2D hightMap = Content.Load<Texture2D>("heightmap");
+            terrain = new HightMapTerrain(hightMap, grassTexture, effect, device);
+            terrain.SetUpGeometry();
         }
 
         private void LoadToolModel()
@@ -129,11 +136,9 @@ namespace Lorlandia
         private void LoadCharModel()
         {
             characterModel = Content.Load<Model>("Dobrochar._Armature_begin");
-            SkinnedModel.SkinnedModel model = characterModel.Tag as SkinnedModel.SkinnedModel;
-            headBone = model.BoneNames.IndexOf("Head");
-            leftPlamBone = model.BoneNames.IndexOf("L_palm");
-            modelPlayer = new AnimationPlayer(model);
-            modelPlayer.StartClip("ArmatureAction");
+            protagonist = new MovableCharacter(characterModel);
+            protagonist.animationPlayer.StartClip("ArmatureAction");
+            
             //foreach (ModelMesh mesh in characterModel.Meshes)
             //{
             //    foreach (ModelMeshPart part in mesh.MeshParts )
@@ -189,9 +194,8 @@ namespace Lorlandia
             camera.Update();
             sphere.Update(Matrix.CreateTranslation(SphereOffset));
             box.Update(Matrix.CreateTranslation(SphereOffset));
-            Dictionary<int, Matrix> headTransform = new Dictionary<int, Matrix>();
-            headTransform.Add(headBone, headYaw);
-            modelPlayer.Update(gameTime.ElapsedGameTime, Matrix.Identity, headTransform);
+            protagonist.Update(gameTime.ElapsedGameTime);
+            
             base.Update(gameTime);
         }
         private void ProcessInput(float elapsedMiliseconds)
@@ -200,8 +204,8 @@ namespace Lorlandia
             KeyboardState k_state = Keyboard.GetState();
             MouseState m_state = Mouse.GetState();
             camera.HandleInput(elapsedMiliseconds, g_state, k_state, m_state);
-            float headRotate = -g_state.Triggers.Left + g_state.Triggers.Right;
-            headYaw = Matrix.CreateRotationZ(MathHelper.ToRadians(45.0f*headRotate));
+            protagonist.HandleInput(elapsedMiliseconds, g_state, k_state, m_state);
+
             output = "Pitch"+camera.Pitch.ToString();
 
             /*sphere move*/
@@ -240,47 +244,13 @@ namespace Lorlandia
             spriteBatch.End();
             GraphicsDevice.BlendState = BlendState.Opaque;
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-            DrawTerrain();
-            //DrawCharacter();
-            //DrawTool();
-            sphere.Draw(camera.View, camera.Projection);
-            box.Draw(camera.View, camera.Projection);
+            terrain.Draw(camera.View, camera.Projection);
+            protagonist.Draw(camera.View, camera.Projection);
+            DrawTool();
+            //sphere.Draw(camera.View, camera.Projection);
+            //box.Draw(camera.View, camera.Projection);
             // TODO: Add your drawing code here
             base.Draw(gameTime);
-        }
-
-        private void DrawTerrain()
-        { 
-            effect.CurrentTechnique = effect.Techniques["Textured"];
-            effect.Parameters["World"].SetValue(Matrix.Identity);
-            effect.Parameters["View"].SetValue(camera.View);
-            effect.Parameters["Projection"].SetValue(camera.Projection);
-            effect.Parameters["xTexture"].SetValue(grassTexture);
-            device.SetVertexBuffer(vertexBuffer);
-            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
-            {
-                pass.Apply();
-                device.DrawPrimitives(PrimitiveType.TriangleList, 0, 2); 
-            }
-        }
-
-        private void DrawCharacter()
-        {
-            Matrix[] characterTransforms = new Matrix[characterModel.Bones.Count];
-            characterModel.CopyAbsoluteBoneTransformsTo(characterTransforms);
-            foreach (ModelMesh mesh in characterModel.Meshes)
-            {
-                foreach (Effect effect in mesh.Effects)
-                {
-                    effect.CurrentTechnique = effect.Techniques["Skinned"];
-                    //effect.Parameters["World"].SetValue(characterTransforms[mesh.ParentBone.Index] * worldMatrix);
-                    effect.Parameters["View"].SetValue(camera.View);
-                    effect.Parameters["Projection"].SetValue(camera.Projection);
-                    effect.Parameters["BoneTransforms"].SetValue(modelPlayer.SkinnedTransforms);
-                    effect.Parameters["LightPosition"].SetValue(new Vector3(0.0f, 100.0f, 10.0f));
-                }
-                mesh.Draw();
-            }
         }
 
         private void DrawTool()
@@ -291,7 +261,7 @@ namespace Lorlandia
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    effect.World = Matrix.CreateRotationZ(MathHelper.PiOver2)*modelPlayer.WorldTransforms[leftPlamBone] * toolTransforms[mesh.ParentBone.Index];
+                    effect.World = Matrix.CreateRotationZ(MathHelper.PiOver2)*protagonist.LeftPalm * toolTransforms[mesh.ParentBone.Index];
                     effect.View = camera.View;
                     effect.Projection = camera.Projection;
                     effect.EnableDefaultLighting();

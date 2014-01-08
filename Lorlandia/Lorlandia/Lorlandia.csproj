@@ -110,6 +110,7 @@
     <Compile Include="Camera\ArcBollCamera.cs" />
     <Compile Include="Camera\FirstPersonCamera.cs" />
     <Compile Include="Camera\Camera.cs" />
+    <Compile Include="Objects\MovableCharacter.cs" />
     <Compile Include="Physics\Collision.cs" />
     <Compile Include="Primitives3D\BoxPrimitive.cs" />
     <Compile Include="Primitives3D\GeometricPrimitive.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Primitives3D\VertexPositionNormal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Terrain\HightMapTerrain.cs" />
     <Compile Include="The Game.cs" />
   </ItemGroup>
   <ItemGroup>
