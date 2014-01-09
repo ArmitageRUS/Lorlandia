@@ -112,6 +112,7 @@
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="Objects\MovableCharacter.cs" />
     <Compile Include="Physics\Collision.cs" />
+    <Compile Include="Physics\QuadGridColision.cs" />
     <Compile Include="Primitives3D\BoxPrimitive.cs" />
     <Compile Include="Primitives3D\GeometricPrimitive.cs" />
     <Compile Include="Primitives3D\SpherePrimitive.cs" />
