@@ -6,9 +6,10 @@ using Microsoft.Xna.Framework;
 
 namespace Lorlandia.Physics
 {
+    public enum Intersection { Front, Inside, Behind, None };
     class Collision
     {
-        public enum Intersection { Front, Inside, Behind, None };
+        
 
         const float inaccuracy = 0.999f;
 

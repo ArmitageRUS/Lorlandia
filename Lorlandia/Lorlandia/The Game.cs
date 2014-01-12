@@ -213,16 +213,16 @@ namespace Lorlandia
             if (k_state.IsKeyDown(Keys.NumPad2)) SphereOffset -= Vector3.Up * elapsedMiliseconds;
             if (k_state.IsKeyDown(Keys.NumPad4)) SphereOffset += Vector3.Left * elapsedMiliseconds;
             if (k_state.IsKeyDown(Keys.NumPad6)) SphereOffset -= Vector3.Left * elapsedMiliseconds;
-            Collision.Intersection intersect = collision.ClassifySphere(terrainPoligons, sphere.Centre, 5);
+            Intersection intersect = collision.ClassifySphere(terrainPoligons, sphere.Centre, 5);
             switch (intersect)
             { 
-                case Collision.Intersection.Front:
+                case Intersection.Front:
                     sphere.color = Color.Blue;
                     break;
-                case Collision.Intersection.Inside:
+                case Intersection.Inside:
                     sphere.color = Color.Red;
                     break;
-                case Collision.Intersection.Behind:
+                case Intersection.Behind:
                     sphere.color = Color.Black;
                     break;
                 default:
