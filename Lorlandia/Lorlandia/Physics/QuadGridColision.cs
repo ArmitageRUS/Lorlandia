@@ -24,6 +24,11 @@ namespace Lorlandia.Physics
                 int cellX = (int)Math.Floor(first.X - position.X);
                 int cellY = (int)Math.Floor(first.Z - position.Z);
 
+                vertives[0] = new VertexPositionColor(vertex_grid[cellX+1, cellY], Color.Yellow);
+                vertives[1] = new VertexPositionColor(vertex_grid[cellX, cellY], Color.Yellow);
+                vertives[2] = new VertexPositionColor(vertex_grid[cellX, cellY + grid_height], Color.Yellow);
+                vertives[3] = new VertexPositionColor(vertex_grid[cellX + 1, cellY + grid_height], Color.Yellow);
+
             }
             return intersection;
         }
