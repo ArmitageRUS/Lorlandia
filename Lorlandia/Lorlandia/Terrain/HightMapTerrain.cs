@@ -46,8 +46,12 @@ namespace Lorlandia.Terrain
         }
 
         public VertexPositionColor[] Collision(Vector3 position)
-        { 
-            
+        {
+            VertexPositionColor[] vertices;
+            Matrix inverse_world = Matrix.Invert(world);
+            position = Vector3.Transform(position, inverse_world);
+            collision.GetCurrentHeight(position, out vertices);
+            return vertices;
         }
 
         public void SetUpGeometry()
