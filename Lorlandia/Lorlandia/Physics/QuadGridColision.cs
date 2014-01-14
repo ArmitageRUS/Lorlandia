@@ -9,7 +9,9 @@ namespace Lorlandia.Physics
 {
     class QuadGridColision
     {
-        public Intersection GetCurrentHeight(Vector3[,] vertex_grid, Vector3 position, out VertexPositionColor[] vertives)
+        Vector3[,] vertex_grid;
+
+        public Intersection GetCurrentHeight(Vector3 position, out VertexPositionColor[] vertives)
         {
             vertives = new VertexPositionColor[4];
             Intersection intersection = Intersection.None;

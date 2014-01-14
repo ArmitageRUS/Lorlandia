@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Lorlandia.Physics;
 
 namespace Lorlandia.Terrain
 {
@@ -13,6 +14,15 @@ namespace Lorlandia.Terrain
         Texture2D texture;
         VertexBuffer vertexBuffer;
         IndexBuffer indexBuffer;
+        Vector3[,] vertex_grid;
+        QuadGridColision collision;
+
+        public Vector3[,] VertexCoords
+        {
+            get { return vertex_grid; }
+            private set {}
+        }
+
         Effect effect;
         GraphicsDevice device;
         Matrix world;
@@ -31,6 +41,13 @@ namespace Lorlandia.Terrain
             world = Matrix.CreateTranslation(-terrain_width/2.0f, 0.0f, -terrain_height/2.0f);
             this.effect = effect;
             this.device = device;
+            vertex_grid = new Vector3[terrain_width, terrain_height];
+            collision = new QuadGridColision();
+        }
+
+        public VertexPositionColor[] Collision(Vector3 position)
+        { 
+            
         }
 
         public void SetUpGeometry()
@@ -43,6 +60,7 @@ namespace Lorlandia.Terrain
                 for (int j = 0; j < terrain_height; j++)
                 {
                     vertices[i * terrain_width + j] = new VertexPositionNormalTexture(new Vector3(i, heightData[i, j], j), Vector3.Zero, new Vector2(((float)i*6)/terrain_width, ((float)j*6)/terrain_height));
+                    vertex_grid[i, j] = new Vector3(i, heightData[i, j], j);
                 }
             }
             ushort[] indices;
