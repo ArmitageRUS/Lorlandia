@@ -30,8 +30,6 @@ namespace Lorlandia
         VertexBuffer vertexBuffer;
         GraphicsDevice device;
         Effect effect;
-        //Texture2D grassTexture;
-        //Texture2D charTexture;
         Model characterModel;
         Model toolModel;
         //AnimationPlayer modelPlayer;
@@ -45,9 +43,12 @@ namespace Lorlandia
         MovableCharacter protagonist;
         //float lower_model_point = 0;
         const float constSpeed = 13.0f;
-        
 
-        Vector3[] terrainPoligons;
+        VertexBuffer test_buffer;
+        IndexBuffer test_ibuffer;
+        BasicEffect test_effect;
+        static RasterizerState test_Wire = new RasterizerState { FillMode = FillMode.WireFrame, CullMode = CullMode.None };
+
         
         public Game1()
         {
@@ -70,6 +71,9 @@ namespace Lorlandia
             graphics.ApplyChanges();
             Window.Title = "Lorlandia — alpha";
             device = graphics.GraphicsDevice;
+
+            test_effect = new BasicEffect(device);
+            
             base.Initialize();
             
         }
@@ -195,7 +199,19 @@ namespace Lorlandia
             sphere.Update(Matrix.CreateTranslation(SphereOffset));
             box.Update(Matrix.CreateTranslation(SphereOffset));
             protagonist.Update(gameTime.ElapsedGameTime);
-            
+            VertexPositionColor[] test_vertices = terrain.Collision(Vector3.Zero);
+
+            test_buffer = new VertexBuffer(device, VertexPositionColor.VertexDeclaration, test_vertices.Length, BufferUsage.WriteOnly);
+            ushort[] test_indices = new ushort[5];
+            test_indices[0] = 0;
+            test_indices[1] = 1;
+            test_indices[2] = 2;
+            test_indices[3] = 3;
+            test_indices[4] = 0;
+            test_ibuffer = new IndexBuffer(device, typeof(ushort), test_indices.Length, BufferUsage.WriteOnly);
+            test_buffer.SetData<VertexPositionColor>(test_vertices);
+            test_ibuffer.SetData<ushort>(test_indices);
+
             base.Update(gameTime);
         }
         private void ProcessInput(float elapsedMiliseconds)
@@ -213,22 +229,23 @@ namespace Lorlandia
             if (k_state.IsKeyDown(Keys.NumPad2)) SphereOffset -= Vector3.Up * elapsedMiliseconds;
             if (k_state.IsKeyDown(Keys.NumPad4)) SphereOffset += Vector3.Left * elapsedMiliseconds;
             if (k_state.IsKeyDown(Keys.NumPad6)) SphereOffset -= Vector3.Left * elapsedMiliseconds;
-            Intersection intersect = collision.ClassifySphere(terrainPoligons, sphere.Centre, 5);
-            switch (intersect)
-            { 
-                case Intersection.Front:
-                    sphere.color = Color.Blue;
-                    break;
-                case Intersection.Inside:
-                    sphere.color = Color.Red;
-                    break;
-                case Intersection.Behind:
-                    sphere.color = Color.Black;
-                    break;
-                default:
-                    sphere.color = Color.White;
-                    break;
-            }
+            
+            //Intersection intersect = collision.ClassifySphere(terrainPoligons, sphere.Centre, 5);
+            //switch (intersect)
+            //{ 
+            //    case Intersection.Front:
+            //        sphere.color = Color.Blue;
+            //        break;
+            //    case Intersection.Inside:
+            //        sphere.color = Color.Red;
+            //        break;
+            //    case Intersection.Behind:
+            //        sphere.color = Color.Black;
+            //        break;
+            //    default:
+            //        sphere.color = Color.White;
+            //        break;
+            //}
         }
         
         /// <summary>
@@ -244,9 +261,23 @@ namespace Lorlandia
             spriteBatch.End();
             GraphicsDevice.BlendState = BlendState.Opaque;
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-            terrain.Draw(camera.View, camera.Projection);
-            protagonist.Draw(camera.View, camera.Projection);
-            DrawTool();
+            //terrain.Draw(camera.View, camera.Projection);
+            //protagonist.Draw(camera.View, camera.Projection);
+            //DrawTool();
+
+            device.SetVertexBuffer(test_buffer);
+            device.Indices = test_ibuffer;
+            device.RasterizerState = test_Wire;
+            test_effect.World = Matrix.Identity;
+            test_effect.View = camera.View;
+            test_effect.Projection = camera.Projection;
+            //test_effect.EnableDefaultLighting();
+            foreach (EffectPass pass in test_effect.CurrentTechnique.Passes)
+            {
+                pass.Apply();
+                device.DrawIndexedPrimitives(PrimitiveType.LineStrip, 0, 0, 4, 0, 4);
+            }
+            
             //sphere.Draw(camera.View, camera.Projection);
             //box.Draw(camera.View, camera.Projection);
             // TODO: Add your drawing code here

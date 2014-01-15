@@ -50,7 +50,7 @@ namespace Lorlandia.Terrain
             VertexPositionColor[] vertices;
             Matrix inverse_world = Matrix.Invert(world);
             position = Vector3.Transform(position, inverse_world);
-            collision.GetCurrentHeight(position, out vertices);
+            collision.GetCurrentHeight(vertex_grid, position, out vertices);
             return vertices;
         }
 

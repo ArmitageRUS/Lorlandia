@@ -9,9 +9,7 @@ namespace Lorlandia.Physics
 {
     class QuadGridColision
     {
-        Vector3[,] vertex_grid;
-
-        public Intersection GetCurrentHeight(Vector3 position, out VertexPositionColor[] vertives)
+        public Intersection GetCurrentHeight(Vector3[,] vertex_grid, Vector3 position, out VertexPositionColor[] vertives)
         {
             vertives = new VertexPositionColor[4];
             Intersection intersection = Intersection.None;
@@ -23,13 +21,13 @@ namespace Lorlandia.Physics
             if (position.X >= first.X && position.X <= last.X && position.Z >= first.Z && position.Z <= last.Z)
             {
                 intersection = Intersection.Inside;
-                int cellX = (int)Math.Floor(first.X - position.X);
-                int cellY = (int)Math.Floor(first.Z - position.Z);
+                int cellX = (int)Math.Floor(position.X - first.X);
+                int cellY = (int)Math.Floor(position.Z - first.Z);
 
                 vertives[0] = new VertexPositionColor(vertex_grid[cellX+1, cellY], Color.Yellow);
                 vertives[1] = new VertexPositionColor(vertex_grid[cellX, cellY], Color.Yellow);
-                vertives[2] = new VertexPositionColor(vertex_grid[cellX, cellY + grid_height], Color.Yellow);
-                vertives[3] = new VertexPositionColor(vertex_grid[cellX + 1, cellY + grid_height], Color.Yellow);
+                vertives[2] = new VertexPositionColor(vertex_grid[cellX, cellY + 1], Color.Yellow);
+                vertives[3] = new VertexPositionColor(vertex_grid[cellX + 1, cellY + 1], Color.Yellow);
 
             }
             return intersection;

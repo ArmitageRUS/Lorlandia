@@ -70,7 +70,7 @@ namespace Lorlandia.Primitives3D
 
         public virtual void Draw(Matrix view, Matrix projection)
         {
-            this.world = world;
+            //this.world = world;
             effect.World = world;
             effect.View = view;
             effect.Projection = projection;
