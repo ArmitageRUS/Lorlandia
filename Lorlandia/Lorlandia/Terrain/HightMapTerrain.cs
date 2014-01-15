@@ -51,7 +51,11 @@ namespace Lorlandia.Terrain
             Matrix inverse_world = Matrix.Invert(world);
             position = Vector3.Transform(position, inverse_world);
             collision.GetCurrentHeight(vertex_grid, position, out vertices);
-            return vertices;
+            for (int i = 0; i < vertices.Length; i++)
+            {
+                vertices[i].Position = Vector3.Transform(vertices[i].Position, world);
+            }
+                return vertices;
         }
 
         public void SetUpGeometry()

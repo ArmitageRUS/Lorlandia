@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Grass.xnb</Output>
-      <Time>2013-10-14T00:55:52.4385868+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Grass.xnb</Output>
+      <Time>2013-10-14T22:27:02.7650084+04:00</Time>
     </Item>
     <Item>
       <Source>Dobrochan_TEXURE.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE.xnb</Output>
-      <Time>2013-11-21T15:32:17.5167984+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE.xnb</Output>
+      <Time>2013-10-24T00:38:00.2852192+04:00</Time>
     </Item>
     <Item>
       <Source>heightmap.bmp</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\heightmap.xnb</Output>
-      <Time>2013-12-25T15:06:38.3200355+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\heightmap.xnb</Output>
+      <Time>2013-12-23T23:13:53.8446969+04:00</Time>
     </Item>
     <Item>
       <Source>MainEffects.fx</Source>
@@ -34,8 +34,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Output>
-      <Time>2013-10-14T00:55:56.7098311+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Output>
+      <Time>2013-10-14T22:27:02.7670085+04:00</Time>
     </Item>
     <Item>
       <Source>Dobrochar._Armature_begin.fbx</Source>
@@ -47,14 +47,14 @@
         <Data Key="InitialRotX">-90</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochar._Armature_begin.xnb</Output>
-      <Time>2013-10-14T00:55:49.5904239+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochar._Armature_begin.xnb</Output>
+      <Time>2013-10-14T22:27:02.7630083+04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Dobrochar._Armature_begin_0.xml</Key>
-        <Value>2014-01-14T13:25:42.3049894+04:00</Value>
+        <Value>2014-01-15T22:16:43.3160339+04:00</Value>
       </Dependency>
-      <Request>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Request>
-      <Request>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Request>
+      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Request>
+      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Request>
     </Item>
     <Item>
       <Source>baseballbat.fbx</Source>
@@ -66,11 +66,11 @@
         <Data Key="RotationX">-90</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\baseballbat.xnb</Output>
-      <Time>2013-10-14T00:55:44.6071388+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\baseballbat.xnb</Output>
+      <Time>2013-10-14T22:27:02.7730088+04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\baseballbat_0.xml</Key>
-        <Value>2014-01-14T13:25:42.9490263+04:00</Value>
+        <Value>2014-01-15T22:16:44.4430984+04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -79,15 +79,15 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2013-10-14T00:55:58.2769207+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2013-10-14T22:27:02.7680085+04:00</Time>
     </Item>
     <Item>
       <Source>Dobrochar._Armature_begin.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Dobrochar._Armature_begin_0.xml</Output>
-      <Time>2013-10-14T00:55:49.5904239+04:00</Time>
+      <Time>2013-10-14T22:27:02.7630083+04:00</Time>
     </Item>
     <Item>
       <Source>Dobrochan_TEXURE.png</Source>
@@ -102,15 +102,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Output>
-      <Time>2013-11-21T15:32:17.5167984+04:00</Time>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Output>
+      <Time>2013-10-24T00:38:00.2852192+04:00</Time>
     </Item>
     <Item>
       <Source>baseballbat.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\baseballbat_0.xml</Output>
-      <Time>2013-10-14T00:55:44.6071388+04:00</Time>
+      <Time>2013-10-14T22:27:02.7730088+04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -118,43 +118,43 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\LorlandiaContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\LorlandiaContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\LorlandiaContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.dll</Key>
-        <Value>2014-01-14T12:51:19.6750138+04:00</Value>
+        <Key>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.dll</Key>
+        <Value>2014-01-07T14:40:14.7361284+04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+04:00</Value>
+        <Value>2010-08-23T14:41:18+05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18+04:00</Value>
+        <Value>2010-08-23T14:41:18+05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+04:00</Value>
+        <Value>2010-08-23T14:41:18+05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+04:00</Value>
+        <Value>2010-08-23T14:41:18+05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+04:00</Value>
+        <Value>2010-08-23T14:41:18+05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18+04:00</Value>
+        <Value>2010-08-23T14:41:18+05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-09-20T16:53:22.7231736+04:00</Value>
+        <Value>2011-03-22T00:42:44.2052594+04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

@@ -261,9 +261,9 @@ namespace Lorlandia
             spriteBatch.End();
             GraphicsDevice.BlendState = BlendState.Opaque;
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-            //terrain.Draw(camera.View, camera.Projection);
-            //protagonist.Draw(camera.View, camera.Projection);
-            //DrawTool();
+            terrain.Draw(camera.View, camera.Projection);
+            protagonist.Draw(camera.View, camera.Projection);
+            DrawTool();
 
             device.SetVertexBuffer(test_buffer);
             device.Indices = test_ibuffer;

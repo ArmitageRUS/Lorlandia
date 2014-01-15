@@ -18,7 +18,7 @@ namespace Lorlandia.Physics
             int grid_height = vertex_grid.GetLength(1) - 1;
             Vector3 first = vertex_grid[0, 0];
             Vector3 last = vertex_grid[grid_width, grid_height];
-            if (position.X >= first.X && position.X <= last.X && position.Z >= first.Z && position.Z <= last.Z)
+            if (position.X >= first.X && position.X < last.X && position.Z >= first.Z && position.Z < last.Z)
             {
                 intersection = Intersection.Inside;
                 int cellX = (int)Math.Floor(position.X - first.X);
