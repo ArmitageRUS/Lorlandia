@@ -47,7 +47,6 @@ namespace Lorlandia
         VertexBuffer test_buffer;
         IndexBuffer test_ibuffer;
         BasicEffect test_effect;
-        static RasterizerState test_Wire = new RasterizerState { FillMode = FillMode.WireFrame, CullMode = CullMode.None };
 
         
         public Game1()
@@ -102,23 +101,6 @@ namespace Lorlandia
 
         private void LoadTerrain()
         {
-            //VertexPositionNormalTexture[] vertices = new VertexPositionNormalTexture[6];
-
-            //vertices[0] = new VertexPositionNormalTexture(new Vector3(-10, 0, -10), Vector3.Up, new Vector2(-1, -1));
-            //vertices[1] = new VertexPositionNormalTexture(new Vector3(10, 0, -10), Vector3.Up, new Vector2(1, -1));
-            //vertices[2] = new VertexPositionNormalTexture(new Vector3(-10, 0, 10), Vector3.Up, new Vector2(-1, 1));
-            //vertices[3] = new VertexPositionNormalTexture(new Vector3(10, 0, 10), Vector3.Up, new Vector2(1, 1));
-            //vertices[4] = new VertexPositionNormalTexture(new Vector3(-10, 0, 10), Vector3.Up, new Vector2(-1, 1));
-            //vertices[5] = new VertexPositionNormalTexture(new Vector3(10, 0, -10), Vector3.Up, new Vector2(1, -1));
-
-            //terrainPoligons = new Vector3[4];
-            //terrainPoligons[0] = new Vector3(-10, 0, -10);
-            //terrainPoligons[1] = new Vector3(10, 0, -10);
-            //terrainPoligons[2] = new Vector3(10, 0, 10);
-            //terrainPoligons[3] = new Vector3(-10, 0, 10);
-
-            //vertexBuffer = new VertexBuffer(device, VertexPositionNormalTexture.VertexDeclaration, 6, BufferUsage.WriteOnly);
-            //vertexBuffer.SetData<VertexPositionNormalTexture>(vertices);
             Texture2D grassTexture = Content.Load<Texture2D>("Grass");
             Texture2D hightMap = Content.Load<Texture2D>("heightmap");
             terrain = new HightMapTerrain(hightMap, grassTexture, effect, device);
@@ -168,7 +150,8 @@ namespace Lorlandia
         {
             Mouse.SetPosition(device.Viewport.Width / 2, device.Viewport.Height / 2);
             //camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
-            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0,2,0));
+            MouseState m_state = Mouse.GetState();
+            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0,2,0), m_state);
             camera.Pitch = -MathHelper.Pi / 3.0f;
             camera.Yaw = MathHelper.Pi;
         }
@@ -267,7 +250,7 @@ namespace Lorlandia
 
             device.SetVertexBuffer(test_buffer);
             device.Indices = test_ibuffer;
-            device.RasterizerState = test_Wire;
+            //device.RasterizerState = test_Wire;
             test_effect.World = Matrix.Identity;
             test_effect.View = camera.View;
             test_effect.Projection = camera.Projection;

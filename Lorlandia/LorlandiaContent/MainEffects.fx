@@ -125,7 +125,6 @@ technique Textured
     pass Pass0
     {
         // TODO: set renderstates here.
-
         VertexShader = compile vs_2_0 SimpleVertexShaderFunction();
         PixelShader = compile ps_2_0 SimplePixelShaderFunction();
     }

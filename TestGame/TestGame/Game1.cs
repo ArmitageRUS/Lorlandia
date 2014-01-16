@@ -26,8 +26,7 @@ namespace TestGame
         GraphicsDevice device;
         Color color = Color.Black;
         Camera camera;
-
-        static RasterizerState Wire = new RasterizerState { FillMode = FillMode.WireFrame, CullMode = CullMode.None };
+        MouseState mouse_state;
 
         public Game1()
         {
@@ -149,8 +148,9 @@ namespace TestGame
         private void SetUpCamera()
         {
             Mouse.SetPosition(device.Viewport.Width / 2, device.Viewport.Height / 2);
+            mouse_state = Mouse.GetState();
             //camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
-            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 2, 0));
+            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 2, 0), mouse_state);
             camera.Pitch = -MathHelper.Pi / 3.0f;
             camera.Yaw = MathHelper.Pi;
         }
@@ -199,7 +199,6 @@ namespace TestGame
             effect.Alpha = color.A / 255.0f;
             device.DepthStencilState = DepthStencilState.Default;
             device.BlendState = BlendState.AlphaBlend;
-            device.RasterizerState = Wire;
             device.SetVertexBuffer(vertexBuffer);
             device.Indices = indexBuffer;
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)

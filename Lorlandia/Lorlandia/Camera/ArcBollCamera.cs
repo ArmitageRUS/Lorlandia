@@ -17,6 +17,8 @@ namespace Lorlandia.Camera
         public Vector3 target;
         public Vector3 position;
 
+        MouseState old_state;
+
         public override float Yaw
         {
             get
@@ -44,9 +46,10 @@ namespace Lorlandia.Camera
             }
         }
 
-        public ArcBallCamera(float aspect_ration, float near_plane, float far_plane, Vector3 target)
+        public ArcBallCamera(float aspect_ration, float near_plane, float far_plane, Vector3 target, MouseState m_state)
         {
             Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, aspect_ration, near_plane, far_plane);
+            old_state = m_state;
             this.target = target;
         }
 
@@ -56,10 +59,19 @@ namespace Lorlandia.Camera
             Pitch += g_state.ThumbSticks.Right.Y * elapsed_time;
             if (g_state.DPad.Up == ButtonState.Pressed) zoom -= 15f * elapsed_time;
             if (g_state.DPad.Down == ButtonState.Pressed) zoom += 15f * elapsed_time;
-            if (k_state.IsKeyDown(Keys.A)) Yaw -= 1.05f * elapsed_time;
-            if (k_state.IsKeyDown(Keys.D)) Yaw += 1.05f * elapsed_time;
-            if (k_state.IsKeyDown(Keys.W)) Pitch += 1.05f * elapsed_time;
-            if (k_state.IsKeyDown(Keys.S)) Pitch -= 1.05f * elapsed_time;
+
+            if (old_state != m_state)
+            {
+                float x_diff = m_state.X - old_state.X;
+                float y_diff = m_state.Y - old_state.Y;
+                Yaw -= x_diff * elapsed_time;
+                Pitch += y_diff * elapsed_time;
+            }
+
+            //if (k_state.IsKeyDown(Keys.A)) Yaw -= 1.05f * elapsed_time;
+            //if (k_state.IsKeyDown(Keys.D)) Yaw += 1.05f * elapsed_time;
+            //if (k_state.IsKeyDown(Keys.W)) Pitch += 1.05f * elapsed_time;
+            //if (k_state.IsKeyDown(Keys.S)) Pitch -= 1.05f * elapsed_time;
             if (k_state.IsKeyDown(Keys.Subtract)) zoom += 15f * elapsed_time;
             if (k_state.IsKeyDown(Keys.Add)) zoom -= 15f * elapsed_time;
         }
