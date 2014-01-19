@@ -150,7 +150,7 @@ namespace TestGame
             Mouse.SetPosition(device.Viewport.Width / 2, device.Viewport.Height / 2);
             mouse_state = Mouse.GetState();
             //camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
-            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 2, 0), mouse_state);
+            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 2, 0), Vector3.Zero, mouse_state);
             camera.Pitch = -MathHelper.Pi / 3.0f;
             camera.Yaw = MathHelper.Pi;
         }

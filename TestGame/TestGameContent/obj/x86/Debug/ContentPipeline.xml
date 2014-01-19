@@ -7,15 +7,15 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGameContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGameContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGameContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-09-20T16:53:22.7231736+04:00</Value>
+        <Value>2011-03-22T00:42:44.2052594+04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

@@ -12,10 +12,11 @@ namespace Lorlandia.Objects
     class MovableCharacter
     {
         Vector3 direction;
-        Vector3 position = Vector3.Zero;
+        public Vector3 position = Vector3.Zero;
         public AnimationPlayer animationPlayer;
         int headBone = 0;
         int leftPlamBone = 0;
+        float angle=0;
         Model model;
         Matrix mainTransform=Matrix.Identity;
         Dictionary<int, Matrix> boneManipulate;
@@ -74,6 +75,11 @@ namespace Lorlandia.Objects
             }
         }
 
+        //public Vector3 Position
+        //{
+        //    get { return position; }
+        //}
+
         public MovableCharacter(Model characterModel)
         {
             SkinnedModel.SkinnedModel skinnedModel = characterModel.Tag as SkinnedModel.SkinnedModel;
@@ -106,23 +112,28 @@ namespace Lorlandia.Objects
         {
             float headRotate = -g_state.Triggers.Left + g_state.Triggers.Right;
             headTransform = Matrix.CreateRotationZ(MathHelper.ToRadians(45.0f * headRotate));
-            direction = new Vector3(g_state.ThumbSticks.Left.X, 0, g_state.ThumbSticks.Left.Y);
+            direction = new Vector3(-g_state.ThumbSticks.Left.X, 0, g_state.ThumbSticks.Left.Y);
             if (direction.Length() > 0.0f)
             {
-                double angle = Math.Atan2(direction.X, direction.Z);
-                mainTransform = Matrix.CreateRotationY((float)angle);
+                angle = (float)Math.Atan2(direction.X, direction.Z);
+                position += (direction*elapsed_time*2.0f);
+                mainTransform = Matrix.CreateRotationY(angle)*Matrix.CreateTranslation(position);
             }
-            
-            //Yaw -= g_state.ThumbSticks.Right.X * elapsed_time;
-            //Pitch += g_state.ThumbSticks.Right.Y * elapsed_time;
-            //if (g_state.DPad.Up == ButtonState.Pressed) zoom -= 15f * elapsed_time;
-            //if (g_state.DPad.Down == ButtonState.Pressed) zoom += 15f * elapsed_time;
-            //if (k_state.IsKeyDown(Keys.A)) Yaw -= 1.05f * elapsed_time;
-            //if (k_state.IsKeyDown(Keys.D)) Yaw += 1.05f * elapsed_time;
-            //if (k_state.IsKeyDown(Keys.W)) Pitch += 1.05f * elapsed_time;
-            //if (k_state.IsKeyDown(Keys.S)) Pitch -= 1.05f * elapsed_time;
-            //if (k_state.IsKeyDown(Keys.Subtract)) zoom += 15f * elapsed_time;
-            //if (k_state.IsKeyDown(Keys.Add)) zoom -= 15f * elapsed_time;
+            float angle_offset = 0.0f;
+            if (k_state.IsKeyDown(Keys.Left)) angle_offset = elapsed_time * 1.5f;
+            if (k_state.IsKeyDown(Keys.Right)) angle_offset = -elapsed_time * 1.5f;
+            if (angle_offset != 0)
+            {
+                angle += angle_offset;
+                //mainTransform = Matrix.CreateRotationY(angle);
+            }
+            if (k_state.IsKeyDown(Keys.Up))
+            {
+                Vector3 position_offset = Vector3.Transform(Vector3.Backward, Matrix.CreateRotationY(angle));
+                position += (position_offset * elapsed_time*2.0f);
+               
+            }
+             mainTransform = Matrix.CreateRotationY(angle)*Matrix.CreateTranslation(position);
         }
 
         public void Update(TimeSpan elapsed_time)

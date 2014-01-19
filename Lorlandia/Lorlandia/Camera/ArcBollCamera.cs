@@ -14,7 +14,8 @@ namespace Lorlandia.Camera
 
         float zoom = 15.0f;
 
-        public Vector3 target;
+        //public Vector3 target;
+        Vector3 target_offset;
         public Vector3 position;
 
         MouseState old_state;
@@ -46,11 +47,12 @@ namespace Lorlandia.Camera
             }
         }
 
-        public ArcBallCamera(float aspect_ration, float near_plane, float far_plane, Vector3 target, MouseState m_state)
+        public ArcBallCamera(float aspect_ration, float near_plane, float far_plane, Vector3 target, Vector3 target_offset, MouseState m_state)
         {
             Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, aspect_ration, near_plane, far_plane);
             old_state = m_state;
-            this.target = target;
+            this.target_offset = target_offset;
+            base.target = target;
         }
 
         public override void HandleInput(float elapsed_time, GamePadState g_state, KeyboardState k_state, MouseState m_state)
@@ -64,8 +66,10 @@ namespace Lorlandia.Camera
             {
                 float x_diff = m_state.X - old_state.X;
                 float y_diff = m_state.Y - old_state.Y;
-                Yaw -= x_diff * elapsed_time;
-                Pitch += y_diff * elapsed_time;
+                Yaw -= x_diff * elapsed_time*0.25f;
+                Pitch += y_diff * elapsed_time*0.25f;
+                zoom -= (m_state.ScrollWheelValue - old_state.ScrollWheelValue)*elapsed_time;
+                old_state = m_state;
             }
 
             //if (k_state.IsKeyDown(Keys.A)) Yaw -= 1.05f * elapsed_time;
@@ -85,7 +89,7 @@ namespace Lorlandia.Camera
 
             position = cameraPosition+target;
             this.TransformBaseVectors();
-            View = Matrix.CreateLookAt(this.position,this.target, this.up);
+            View = Matrix.CreateLookAt(this.position,base.target+target_offset, this.up);
         }
 
         public void TransformBaseVectors()

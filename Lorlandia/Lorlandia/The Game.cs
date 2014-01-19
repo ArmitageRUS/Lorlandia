@@ -32,7 +32,6 @@ namespace Lorlandia
         Effect effect;
         Model characterModel;
         Model toolModel;
-        //AnimationPlayer modelPlayer;
         SpherePrimitive sphere;
         BoxPrimitive box;
         Collision collision;
@@ -151,7 +150,7 @@ namespace Lorlandia
             Mouse.SetPosition(device.Viewport.Width / 2, device.Viewport.Height / 2);
             //camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
             MouseState m_state = Mouse.GetState();
-            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0,2,0), m_state);
+            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, protagonist.position, new Vector3(0,2,0), m_state);
             camera.Pitch = -MathHelper.Pi / 3.0f;
             camera.Yaw = MathHelper.Pi;
         }
@@ -178,22 +177,22 @@ namespace Lorlandia
 
             // TODO: Add your update logic here
             ProcessInput((float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f);
-            camera.Update();
             sphere.Update(Matrix.CreateTranslation(SphereOffset));
             box.Update(Matrix.CreateTranslation(SphereOffset));
             protagonist.Update(gameTime.ElapsedGameTime);
-            VertexPositionColor[] test_vertices = terrain.Collision(Vector3.Zero);
-
-            test_buffer = new VertexBuffer(device, VertexPositionColor.VertexDeclaration, test_vertices.Length, BufferUsage.WriteOnly);
-            ushort[] test_indices = new ushort[5];
-            test_indices[0] = 0;
-            test_indices[1] = 1;
-            test_indices[2] = 2;
-            test_indices[3] = 3;
-            test_indices[4] = 0;
-            test_ibuffer = new IndexBuffer(device, typeof(ushort), test_indices.Length, BufferUsage.WriteOnly);
-            test_buffer.SetData<VertexPositionColor>(test_vertices);
-            test_ibuffer.SetData<ushort>(test_indices);
+            terrain.Collision(ref protagonist.position);
+            camera.target = protagonist.position;
+            camera.Update();
+            //VertexPositionColor[] test_vertices = terrain.Collision(protagonist.Position);
+            //test_buffer = new VertexBuffer(device, VertexPositionColor.VertexDeclaration, test_vertices.Length, BufferUsage.WriteOnly);
+            //ushort[] test_indices = new ushort[4];
+            //test_indices[0] = 0;
+            //test_indices[1] = 1;
+            //test_indices[2] = 2;
+            //test_indices[3] = 0;
+            //test_ibuffer = new IndexBuffer(device, typeof(ushort), test_indices.Length, BufferUsage.WriteOnly);
+            //test_buffer.SetData<VertexPositionColor>(test_vertices);
+            //test_ibuffer.SetData<ushort>(test_indices);
 
             base.Update(gameTime);
         }
@@ -248,18 +247,18 @@ namespace Lorlandia
             protagonist.Draw(camera.View, camera.Projection);
             DrawTool();
 
-            device.SetVertexBuffer(test_buffer);
-            device.Indices = test_ibuffer;
+            //device.SetVertexBuffer(test_buffer);
+            //device.Indices = test_ibuffer;
             //device.RasterizerState = test_Wire;
-            test_effect.World = Matrix.Identity;
-            test_effect.View = camera.View;
-            test_effect.Projection = camera.Projection;
+            //test_effect.World = Matrix.Identity;
+            //test_effect.View = camera.View;
+            //test_effect.Projection = camera.Projection;
             //test_effect.EnableDefaultLighting();
-            foreach (EffectPass pass in test_effect.CurrentTechnique.Passes)
-            {
-                pass.Apply();
-                device.DrawIndexedPrimitives(PrimitiveType.LineStrip, 0, 0, 4, 0, 4);
-            }
+            //foreach (EffectPass pass in test_effect.CurrentTechnique.Passes)
+            //{
+                //pass.Apply();
+                //device.DrawIndexedPrimitives(PrimitiveType.LineStrip, 0, 0, 3, 0, 3);
+            //}
             
             //sphere.Draw(camera.View, camera.Projection);
             //box.Draw(camera.View, camera.Projection);

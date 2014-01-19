@@ -45,17 +45,12 @@ namespace Lorlandia.Terrain
             collision = new QuadGridColision();
         }
 
-        public VertexPositionColor[] Collision(Vector3 position)
+        public void Collision(ref Vector3 position)
         {
-            VertexPositionColor[] vertices;
             Matrix inverse_world = Matrix.Invert(world);
             position = Vector3.Transform(position, inverse_world);
-            collision.GetCurrentHeight(vertex_grid, position, out vertices);
-            for (int i = 0; i < vertices.Length; i++)
-            {
-                vertices[i].Position = Vector3.Transform(vertices[i].Position, world);
-            }
-                return vertices;
+            position =collision.GetCurrentHeight(vertex_grid, position);
+            position = Vector3.Transform(position, world);
         }
 
         public void SetUpGeometry()
