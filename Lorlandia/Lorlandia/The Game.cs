@@ -183,17 +183,6 @@ namespace Lorlandia
             terrain.Collision(ref protagonist.position);
             camera.target = protagonist.position;
             camera.Update();
-            //VertexPositionColor[] test_vertices = terrain.Collision(protagonist.Position);
-            //test_buffer = new VertexBuffer(device, VertexPositionColor.VertexDeclaration, test_vertices.Length, BufferUsage.WriteOnly);
-            //ushort[] test_indices = new ushort[4];
-            //test_indices[0] = 0;
-            //test_indices[1] = 1;
-            //test_indices[2] = 2;
-            //test_indices[3] = 0;
-            //test_ibuffer = new IndexBuffer(device, typeof(ushort), test_indices.Length, BufferUsage.WriteOnly);
-            //test_buffer.SetData<VertexPositionColor>(test_vertices);
-            //test_ibuffer.SetData<ushort>(test_indices);
-
             base.Update(gameTime);
         }
         private void ProcessInput(float elapsedMiliseconds)
@@ -247,19 +236,6 @@ namespace Lorlandia
             protagonist.Draw(camera.View, camera.Projection);
             DrawTool();
 
-            //device.SetVertexBuffer(test_buffer);
-            //device.Indices = test_ibuffer;
-            //device.RasterizerState = test_Wire;
-            //test_effect.World = Matrix.Identity;
-            //test_effect.View = camera.View;
-            //test_effect.Projection = camera.Projection;
-            //test_effect.EnableDefaultLighting();
-            //foreach (EffectPass pass in test_effect.CurrentTechnique.Passes)
-            //{
-                //pass.Apply();
-                //device.DrawIndexedPrimitives(PrimitiveType.LineStrip, 0, 0, 3, 0, 3);
-            //}
-            
             //sphere.Draw(camera.View, camera.Projection);
             //box.Draw(camera.View, camera.Projection);
             // TODO: Add your drawing code here

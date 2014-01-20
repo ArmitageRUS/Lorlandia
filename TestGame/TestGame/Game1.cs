@@ -19,12 +19,7 @@ namespace TestGame
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-        VertexBuffer vertexBuffer;
-        VertexBuffer triangleBuffer;
-        IndexBuffer indexBuffer;
         GraphicsDevice device;
-        Color color = Color.Black;
         Camera camera;
         MouseState mouse_state;
 
