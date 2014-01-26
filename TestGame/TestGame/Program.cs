@@ -1,6 +1,6 @@
 using System;
 
-namespace TestGame
+namespace Lorlandia
 {
 #if WINDOWS || XBOX
     static class Program
@@ -10,7 +10,7 @@ namespace TestGame
         /// </summary>
         static void Main(string[] args)
         {
-            using (Game1 game = new Game1())
+            using (TestGame game = new TestGame())
             {
                 game.Run();
             }

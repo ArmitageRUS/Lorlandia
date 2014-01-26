@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Lorlandia.Primitives3D
 {
-    class GeometricPrimitive:IDisposable
+    public class GeometricPrimitive:IDisposable
     {
         protected GraphicsDevice device;
 

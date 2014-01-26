@@ -64,11 +64,14 @@ namespace Lorlandia.Camera
 
             if (old_state != m_state)
             {
-                float x_diff = m_state.X - old_state.X;
-                float y_diff = m_state.Y - old_state.Y;
-                Yaw -= x_diff * elapsed_time*0.25f;
-                Pitch += y_diff * elapsed_time*0.25f;
-                zoom -= (m_state.ScrollWheelValue - old_state.ScrollWheelValue)*elapsed_time;
+                if (m_state.MiddleButton == ButtonState.Pressed)
+                {
+                    float x_diff = m_state.X - old_state.X;
+                    float y_diff = m_state.Y - old_state.Y;
+                    Yaw -= x_diff * elapsed_time * 0.25f;
+                    Pitch += y_diff * elapsed_time * 0.25f;
+                    zoom -= (m_state.ScrollWheelValue - old_state.ScrollWheelValue) * elapsed_time;
+                }
                 old_state = m_state;
             }
 

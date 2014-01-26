@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Lorlandia.Primitives3D
 {
-    class SpherePrimitive:GeometricPrimitive
+    public class SpherePrimitive:GeometricPrimitive
     {
         public SpherePrimitive(GraphicsDevice device)
             : this(device, 5, 8, true)

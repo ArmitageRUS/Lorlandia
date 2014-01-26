@@ -115,6 +115,7 @@
     <Compile Include="Physics\QuadGridColision.cs" />
     <Compile Include="Primitives3D\BoxPrimitive.cs" />
     <Compile Include="Primitives3D\GeometricPrimitive.cs" />
+    <Compile Include="Primitives3D\PlanePrimitive.cs" />
     <Compile Include="Primitives3D\SpherePrimitive.cs" />
     <Compile Include="Primitives3D\VertexPositionNormal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

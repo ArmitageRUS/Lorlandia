@@ -109,13 +109,18 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="Test Game.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Lorlandia\LorlandiaContent\LorlandiaContent.contentproj">
+      <Project>{AC7C1208-D326-471E-84A5-232C435E6A06}</Project>
+      <Name>LorlandiaContent %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+    </ProjectReference>
     <ProjectReference Include="..\..\Lorlandia\Lorlandia\Lorlandia.csproj">
       <Project>{1EE387C1-DF65-4DE4-9339-D60989A8DE82}</Project>
       <Name>Lorlandia</Name>
