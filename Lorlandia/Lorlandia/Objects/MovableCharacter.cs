@@ -9,7 +9,7 @@ using SkinnedModel;
 
 namespace Lorlandia.Objects
 {
-    class MovableCharacter
+    public class MovableCharacter
     {
         Vector3 direction;
         public Vector3 position = Vector3.Zero;

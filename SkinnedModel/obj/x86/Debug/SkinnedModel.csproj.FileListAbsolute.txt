@@ -3,7 +3,6 @@ C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedMod
 C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModel\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModel\obj\x86\Debug\SkinnedModel.dll
 C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModel\obj\x86\Debug\SkinnedModel.pdb
-C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModel\obj\x86\Debug\SkinnedModel.csprojResolveAssemblyReference.cache
 D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModel\bin\x86\Debug\SkinnedModel.dll
 D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModel\bin\x86\Debug\SkinnedModel.pdb
 D:\MUSIC\YaDisk\Projects\Lorlandia\SkinnedModel\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt

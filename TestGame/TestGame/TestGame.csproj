@@ -125,6 +125,10 @@
       <Project>{1EE387C1-DF65-4DE4-9339-D60989A8DE82}</Project>
       <Name>Lorlandia</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\SkinnedModel\SkinnedModel.csproj">
+      <Project>{E19C3603-3203-4CDD-9AE1-4E53F1DA375B}</Project>
+      <Name>SkinnedModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestGameContent\TestGameContent.contentproj">
       <Name>TestGameContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>

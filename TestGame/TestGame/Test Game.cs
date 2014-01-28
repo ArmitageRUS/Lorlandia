@@ -10,6 +10,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Lorlandia.Primitives3D;
 using Lorlandia.Camera;
+using Lorlandia.Objects;
+using SkinnedModel;
 
 namespace Lorlandia
 {
@@ -24,6 +26,8 @@ namespace Lorlandia
         MouseState mouse_state;
         SpriteBatch spriteBatch;
         PlanePrimitive plane;
+        Model characterModel;
+        MovableCharacter protagonist;
 
         public TestGame()
         {
@@ -57,6 +61,7 @@ namespace Lorlandia
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SetUpCamera();
             plane = new PlanePrimitive(device, 5, 5, 5.0f);
+            LoadCharacter();
             // TODO: use this.Content to load your game content here
 
         }
@@ -69,6 +74,13 @@ namespace Lorlandia
             camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 0, 0), Vector3.Zero, mouse_state);
             //camera.Pitch = -MathHelper.Pi / 3.0f;
             //camera.Yaw = MathHelper.Pi;
+        }
+
+        private void LoadCharacter()
+        {
+            characterModel = Content.Load<Model>("Dobrochar._Armature_begin");
+            protagonist = new MovableCharacter(characterModel);
+            protagonist.animationPlayer.StartClip("ArmatureAction");   
         }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -97,6 +109,7 @@ namespace Lorlandia
             camera.HandleInput(elapsedMiliseconds, g_state, k_state, m_state);
             camera.Update();
             plane.Update();
+            protagonist.Update(TimeSpan.Zero);
             base.Update(gameTime);
         }
 
@@ -107,6 +120,7 @@ namespace Lorlandia
         protected override void Draw(GameTime gameTime)
         {
             plane.Draw(camera.View, camera.Projection);
+            protagonist.Draw(camera.View, camera.Projection);
             base.Draw(gameTime);
         }
     }
