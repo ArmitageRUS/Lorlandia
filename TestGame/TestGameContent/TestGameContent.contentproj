@@ -41,6 +41,53 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="baseballbat.fbx">
+      <Name>baseballbat</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Dobrochar._Armature_begin.fbx">
+      <Name>Dobrochar._Armature_begin</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedProcessor</Processor>
+      <ProcessorParameters_InitialRotX>-90</ProcessorParameters_InitialRotX>
+      <ProcessorParameters_InitialRotZ>180</ProcessorParameters_InitialRotZ>
+    </Compile>
+    <Compile Include="MainEffects.fx">
+      <Name>MainEffects</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+    </Compile>
+    <Compile Include="SpriteFont1.spritefont">
+      <Name>SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dobrochan_TEXURE.png">
+      <Name>Dobrochan_TEXURE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Grass.png">
+      <Name>Grass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="heightmap.bmp">
+      <Name>heightmap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SkinnedModelProcessor\SkinnedModelProcessor.csproj">
+      <Project>{BCB06286-AD5F-4BC4-8C3D-8EEBB5AC14A1}</Project>
+      <Name>SkinnedModelProcessor</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -80,7 +80,7 @@ namespace Lorlandia
         {
             characterModel = Content.Load<Model>("Dobrochar._Armature_begin");
             protagonist = new MovableCharacter(characterModel);
-            protagonist.animationPlayer.StartClip("ArmatureAction");   
+            //protagonist.animationPlayer.StartClip("ArmatureAction");   
         }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -109,7 +109,7 @@ namespace Lorlandia
             camera.HandleInput(elapsedMiliseconds, g_state, k_state, m_state);
             camera.Update();
             plane.Update();
-            protagonist.Update(TimeSpan.Zero);
+            //protagonist.Update(TimeSpan.Zero);
             base.Update(gameTime);
         }
 

@@ -1,1 +1,2 @@
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\TestGame\TestGameContent\obj\x86\Debug\TestGameContent.contentprojResolveAssemblyReference.cache
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGameContent\obj\x86\Debug\TestGameContent.contentprojResolveAssemblyReference.cache

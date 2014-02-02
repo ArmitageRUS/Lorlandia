@@ -116,11 +116,6 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lorlandia\LorlandiaContent\LorlandiaContent.contentproj">
-      <Project>{AC7C1208-D326-471E-84A5-232C435E6A06}</Project>
-      <Name>LorlandiaContent %28Content%29</Name>
-      <XnaReferenceType>Content</XnaReferenceType>
-    </ProjectReference>
     <ProjectReference Include="..\..\Lorlandia\Lorlandia\Lorlandia.csproj">
       <Project>{1EE387C1-DF65-4DE4-9339-D60989A8DE82}</Project>
       <Name>Lorlandia</Name>
@@ -130,7 +125,8 @@
       <Name>SkinnedModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestGameContent\TestGameContent.contentproj">
-      <Name>TestGameContent</Name>
+      <Project>{C801E610-0C4B-40F6-9EC1-256E4FE8F8A3}</Project>
+      <Name>TestGameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>

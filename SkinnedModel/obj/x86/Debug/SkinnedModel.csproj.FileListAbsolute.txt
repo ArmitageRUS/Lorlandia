@@ -15,3 +15,4 @@ C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\Ski
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\SkinnedModel\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\SkinnedModel\obj\x86\Debug\SkinnedModel.dll
 C:\Users\ssronzhin-a\Documents\Visual Studio 2010\Projects\XNAGame\Lorlandia\SkinnedModel\obj\x86\Debug\SkinnedModel.pdb
+C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModel\obj\x86\Debug\SkinnedModel.csprojResolveAssemblyReference.cache
