@@ -51,7 +51,7 @@
       <Time>2013-10-14T22:27:02.7630083+04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Dobrochar._Armature_begin_0.xml</Key>
-        <Value>2014-02-01T15:34:26.0115009+04:00</Value>
+        <Value>2014-02-04T01:20:37.8941666+04:00</Value>
       </Dependency>
       <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Request>
       <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\Lorlandia\Lorlandia\bin\x86\Debug\Content\MainEffects.xnb</Request>
@@ -70,7 +70,7 @@
       <Time>2013-10-14T22:27:02.7730088+04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\baseballbat_0.xml</Key>
-        <Value>2014-02-01T15:34:26.923553+04:00</Value>
+        <Value>2014-02-04T01:20:39.0492327+04:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -126,7 +126,7 @@
     <Assemblies>
       <Assembly>
         <Key>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.dll</Key>
-        <Value>2014-01-30T01:39:18.8095391+04:00</Value>
+        <Value>2014-02-04T01:20:33.5019154+04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>

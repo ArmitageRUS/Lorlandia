@@ -11,8 +11,27 @@
       <Time>2014-02-01T15:33:35.4666099+04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\baseballbat_0.xml</Key>
-        <Value>2014-02-01T15:34:27.5385882+04:00</Value>
+        <Value>2014-02-04T01:20:40.0602905+04:00</Value>
       </Dependency>
+    </Item>
+    <Item>
+      <Source>Dobrochar._Armature_begin.fbx</Source>
+      <Name>Dobrochar._Armature_begin</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedProcessor</Processor>
+      <Parameters>
+        <Data Key="InitialRotX">-90</Data>
+        <Data Key="InitialRotZ">180</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\Dobrochar._Armature_begin.xnb</Output>
+      <Time>2014-02-01T15:33:35.4846109+04:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Dobrochar._Armature_begin_0.xml</Key>
+        <Value>2014-02-04T01:20:40.453313+04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Request>
+      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\MainEffects.xnb</Request>
     </Item>
     <Item>
       <Source>MainEffects.fx</Source>
@@ -89,25 +108,6 @@
       <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Output>
       <Time>2014-02-01T15:33:35.4736103+04:00</Time>
     </Item>
-    <Item>
-      <Source>Dobrochar._Armature_begin.fbx</Source>
-      <Name>Dobrochar._Armature_begin</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>SkinnedProcessor</Processor>
-      <Parameters>
-        <Data Key="InitialRotX">-90</Data>
-        <Data Key="InitialRotZ">180</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\Dobrochar._Armature_begin.xnb</Output>
-      <Time>2014-02-01T15:33:35.4846109+04:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Dobrochar._Armature_begin_0.xml</Key>
-        <Value>2014-02-01T15:34:27.9206101+04:00</Value>
-      </Dependency>
-      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\Dobrochan_TEXURE_0.xnb</Request>
-      <Request>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\TestGame\TestGame\bin\x86\Debug\Content\MainEffects.xnb</Request>
-    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
@@ -122,7 +122,7 @@
     <Assemblies>
       <Assembly>
         <Key>C:\Users\Armitage\Documents\Visual Studio 2010\Projects\XNA\Lorlandia\SkinnedModelProcessor\bin\x86\Debug\SkinnedModelProcessor.dll</Key>
-        <Value>2014-01-30T01:39:18.8095391+04:00</Value>
+        <Value>2014-02-04T01:20:33.5019154+04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>

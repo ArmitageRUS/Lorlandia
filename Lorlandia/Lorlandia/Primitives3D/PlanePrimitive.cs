@@ -22,14 +22,14 @@ namespace Lorlandia.Primitives3D
             this.ySegments = y_segments;
             this.scale = scale;
             CreateGeometry();
-            world = Matrix.CreateTranslation(new Vector3(-xSegments / 2.0f, 0.0f, -ySegments / 2.0f)) * Matrix.CreateScale(scale);
+            world = Matrix.CreateTranslation(new Vector3(-(xSegments / 2.0f), 0.0f, -(ySegments / 2.0f))) *Matrix.CreateScale(scale);
         }
 
         void CreateGeometry()
         {
-            for (int z = 0; z < ySegments; z++)
+            for (int z = 0; z <= ySegments; z++)
             {
-                for (int x = 0; x < xSegments; x++)
+                for (int x = 0; x <= xSegments; x++)
                 {
                     Vector3 point = new Vector3(x, 0.0f, z);
                     AddVertex(point, Vector3.Up);
@@ -37,53 +37,80 @@ namespace Lorlandia.Primitives3D
             }
             
             bool x_revers = true;
-            for (int z = 0; z < ySegments; z++)
+            for (int z = 0; z <= ySegments; z++)
             {
+                if (x_revers) //-->
+                {
+                    AddIndex(z * (xSegments+1));
+                    AddIndex(z * (xSegments+1) + xSegments);
+                }
+                else // <--
+                {
+                    AddIndex(z * (xSegments + 1)+xSegments);
+                    AddIndex(z * (xSegments+1));
+                }
                 x_revers = !x_revers;
-                if (x_revers)
-                {
-                    AddIndex(z * xSegments);
-                    AddIndex(z * xSegments + xSegments-1);
-                }
-                else
-                {
-                    AddIndex(z * xSegments + xSegments - 1);
-                    AddIndex(z * xSegments);
-                }
             }
-            bool z_reverse = false;
-            if (x_revers)
+            bool z_reverse = true;
+            /*
+             |
+             v
+             */
+
+            if (!x_revers)//actually TRUE
             {
-                for (int x = xSegments - 1; x > 0; x--)
+                for (int x = xSegments; x >= 0; x--)
                 {
-                    AddIndex(z_reverse, x);
+                    if (z_reverse)
+                    {
+                        AddIndex(ySegments * (xSegments + 1) + x);
+                        AddIndex(x);
+                    }
+                    else
+                    {
+                        AddIndex(x);
+                        AddIndex(ySegments * (xSegments + 1) + x);
+                    }
                     z_reverse = !z_reverse;
                 }
             }
+            /*
+             ^
+             |
+             */
             else
             {
-                for (int x = 0; x < xSegments; x++)
+                for (int x = 0; x <= xSegments; x++)
                 {
-                    AddIndex(z_reverse, x);
+                    if (z_reverse)
+                    {
+                        AddIndex(ySegments * (xSegments + 1) + x);
+                        AddIndex(x);
+                    }
+                    else
+                    {
+                        AddIndex(x);
+                        AddIndex(ySegments * (xSegments + 1) + x);
+                    }
                     z_reverse = !z_reverse;
                 }
             }
             InitializePrimitive();
         }
 
-        void AddIndex(bool reverse, int counter)
-        {
-            if (!reverse)
-            {
-                AddIndex(xSegments * (ySegments - 1) + counter);
-                AddIndex(counter);
-            }
-            else
-            {
-                AddIndex(counter);
-                AddIndex(xSegments * (ySegments - 1) + counter);
-            }
-        }
+        //void AddIndex(bool reverse, int counter)
+        //{
+        //    if (!reverse)
+        //    {
+        //        AddIndex(xSegments * (ySegments - 1) + counter);
+        //        AddIndex(counter);
+        //    }
+        //    else
+        //    {
+        //        AddIndex(counter);
+        //        AddIndex(xSegments * (ySegments - 1) + counter);
+        //    }
+        //}
 
         public void Update()
         {
