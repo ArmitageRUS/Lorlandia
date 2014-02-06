@@ -70,8 +70,8 @@ namespace Lorlandia.Camera
                     float y_diff = m_state.Y - old_state.Y;
                     Yaw -= x_diff * elapsed_time * 0.25f;
                     Pitch += y_diff * elapsed_time * 0.25f;
-                    zoom -= (m_state.ScrollWheelValue - old_state.ScrollWheelValue) * elapsed_time;
                 }
+                zoom -= (m_state.ScrollWheelValue - old_state.ScrollWheelValue) * elapsed_time;
                 old_state = m_state;
             }
 

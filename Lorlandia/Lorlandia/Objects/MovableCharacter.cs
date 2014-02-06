@@ -136,9 +136,9 @@ namespace Lorlandia.Objects
              mainTransform = Matrix.CreateRotationY(angle)*Matrix.CreateTranslation(position);
         }
 
-        public void Update(TimeSpan elapsed_time)
+        public void Update(TimeSpan elapsed_time, bool animation = true)
         {
-            animationPlayer.Update(elapsed_time, mainTransform, boneManipulate);
+            animationPlayer.Update(elapsed_time, mainTransform, boneManipulate, animation);
         }
     }
 }

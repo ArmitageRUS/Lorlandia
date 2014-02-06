@@ -101,9 +101,9 @@ namespace SkinnedModel
             model.BindPose.CopyTo(boneTransforms);
         }
 
-        public void Update(TimeSpan elapsed_time, Matrix model_transform, Dictionary<int, Matrix> boneManipulate)
+        public void Update(TimeSpan elapsed_time, Matrix model_transform, Dictionary<int, Matrix> boneManipulate, bool animation=true)
         {
-            UpdateBoneTransforms(elapsed_time, boneManipulate);
+            if(animation)UpdateBoneTransforms(elapsed_time, boneManipulate);
             UpdateWorldTransform(model_transform);
             UpdateSkinnedTransform();
         }

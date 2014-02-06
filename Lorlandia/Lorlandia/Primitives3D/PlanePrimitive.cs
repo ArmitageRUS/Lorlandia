@@ -98,20 +98,6 @@ namespace Lorlandia.Primitives3D
             InitializePrimitive();
         }
 
-        //void AddIndex(bool reverse, int counter)
-        //{
-        //    if (!reverse)
-        //    {
-        //        AddIndex(xSegments * (ySegments - 1) + counter);
-        //        AddIndex(counter);
-        //    }
-        //    else
-        //    {
-        //        AddIndex(counter);
-        //        AddIndex(xSegments * (ySegments - 1) + counter);
-        //    }
-        //}
-
         public void Update()
         {
             base.Update(world);

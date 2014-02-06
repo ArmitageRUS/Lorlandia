@@ -60,7 +60,7 @@ namespace Lorlandia
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SetUpCamera();
-            plane = new PlanePrimitive(device, 5, 5, 5.0f);
+            plane = new PlanePrimitive(device, 50, 50, 5.0f);
             LoadCharacter();
             // TODO: use this.Content to load your game content here
 
@@ -71,9 +71,9 @@ namespace Lorlandia
             Mouse.SetPosition(device.Viewport.Width / 2, device.Viewport.Height / 2);
             mouse_state = Mouse.GetState();
             //camera = new FirstPersonCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 10, 20), device);
-            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 0, 0), Vector3.Zero, mouse_state);
-            //camera.Pitch = -MathHelper.Pi / 3.0f;
-            //camera.Yaw = MathHelper.Pi;
+            camera = new ArcBallCamera(device.Viewport.AspectRatio, 1.0f, 500.0f, new Vector3(0, 2, 0), Vector3.Zero, mouse_state);
+            camera.Pitch = -MathHelper.Pi / 3.0f;
+            camera.Yaw = MathHelper.Pi;
         }
 
         private void LoadCharacter()
@@ -109,7 +109,7 @@ namespace Lorlandia
             camera.HandleInput(elapsedMiliseconds, g_state, k_state, m_state);
             camera.Update();
             plane.Update();
-            protagonist.Update(TimeSpan.Zero);
+            protagonist.Update(TimeSpan.Zero, false);
             base.Update(gameTime);
         }
 
